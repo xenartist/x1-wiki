@@ -54,16 +54,16 @@ A Curated List of XEN Crypto Ecosystem.
 | -------------------------------------------------- | :------: | :----------: | :--------: |
 | [xen.network](https://xen.network)                 |    *     |      *       |     *      |
 | [xenturbo.io](https://xenturbo.io)                 |    *     |      *       |     *      |
-| [xen.pub](https://xen.pub)                         |          |              |            |
-| [xenmon.com ](https://xenmon.com )                 |          |              |            |
-| [xen.fyi](https://xen.fyi)                         |          |              |            |
-| [xensquad.com](https://xensquad.com)               |          |              |            |
-| [cointool.app](https://cointool.app)               |          |              |            |
-| [liquid-xen.ataye.au](https://liquid-xen.ataye.au) |          |              |            |
-| [mct.xyz](https://mct.xyz)                         |          |              |            |
-| [robotxen.com](https://robotxen.com)               |          |              |            |
-| [xencrypto.io](https://xencrypto.io)               |          |              |            |
-| [xenmonit.com](https://xenmonit.com)               |          |              |            |
+| [xen.pub](https://xen.pub)                         |          |              |     *      |
+| [xenmon.com ](https://xenmon.com )                 |          |      *       |     *      |
+| [xen.fyi](https://xen.fyi)                         |    *     |              |            |
+| [xensquad.com](https://xensquad.com)               |          |              |     *      |
+| [cointool.app](https://cointool.app)               |    *     |              |            |
+| [liquid-xen.ataye.au](https://liquid-xen.ataye.au) |    *     |              |            |
+| [mct.xyz](https://mct.xyz)                         |    *     |              |            |
+| [robotxen.com](https://robotxen.com)               |    *     |              |            |
+| [xencrypto.io](https://xencrypto.io)               |    *     |      *       |     *      |
+| [xenmonit.com](https://xenmonit.com)               |          |      *       |     *      |
 
 
 
