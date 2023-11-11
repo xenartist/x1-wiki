@@ -1,6 +1,6 @@
 # Awesome XEN
 
-A Curated List of XEN Crypto Ecosystem.
+A curated list of XEN Crypto Ecosystem.
 
 [TOC]
 
