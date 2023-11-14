@@ -67,10 +67,11 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-## DApps
+## Community Projects
 
-| DApps                                               | Description |
+| Community Projects                                  | Description |
 | --------------------------------------------------- | ----------- |
+| [XENtoshiBlocks](https://xentoshiblocks.com)        |             |
 | [DBXen, DBXeNFT](https://dbxen.org)                 |             |
 | [FENIX](https://fenix.fyi)                          |             |
 | [GDXEN](https://gdxen.xyz)                          |             |
