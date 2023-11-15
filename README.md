@@ -10,12 +10,13 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-| Official Website                          | Description |
-| ----------------------------------------- | ----------- |
-| [Faircrypto.org](https://faircrypto.org)  |             |
-| [xen.network](https://xen.nework)         |             |
-| [vmpx.io](vmpx.io)                        |             |
-| [Xenpedia.com](https://info.xenpedia.com) |             |
+| Official Website                                 | Description |
+| ------------------------------------------------ | ----------- |
+| [Faircrypto.org](https://faircrypto.org)         |             |
+| [xen.network](https://xen.nework)                |             |
+| [vmpx.io](vmpx.io)                               |             |
+| [XenBlocks.io](https://xenblocks.io/leaderboard) |             |
+| [Xenpedia.com](https://info.xenpedia.com)        |             |
 
 
 
