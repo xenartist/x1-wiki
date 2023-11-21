@@ -70,14 +70,17 @@ A curated list of XEN Crypto Ecosystem.
 
 ## XenBlocks Tools
 
-| XenBlocks Tools                                           | Description                                          |
-| --------------------------------------------------------- | ---------------------------------------------------- |
-| [hashhead.io](https://hashhead.io/)                       | XenBlocks Wallet Check                               |
-| [explorer.hashhead.io](https://explorer.hashhead.io/)     | XenBlocks Community Information                      |
-| [xblocks wallet](https://xen.pub/xblocks.php)             | XenBlocks Wallet Check                               |
-| [xblocks dashboard](https://xen.pub/index-xenblocks.php)  | XenBlocks Dashboard                                  |
-| [xblocks nodes](https://xen.pub/xblocks-nodes.php)        | XenBlocks Node Distribution Across Different Regions |
-| [xblocks live listener](https://xen.pub/xblocks-live.php) | XenBlocks Live Listener                              |
+| XenBlocks Tools                                              | Description                                          |
+| ------------------------------------------------------------ | ---------------------------------------------------- |
+| [xenminer](https://github.com/jacklevin74/xenminer/)         | XenBlocks CPU Miner (Official)                       |
+| [XENGPUMiner](https://github.com/shanhaicoder/XENGPUMiner/)  | XenBlocks GPU Miner (Official)                       |
+| [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | VAST.AI GPU Performance Aggregator for XENGPUMiners  |
+| [hashhead.io](https://hashhead.io/)                          | XenBlocks Wallet Check                               |
+| [explorer.hashhead.io](https://explorer.hashhead.io/)        | XenBlocks Community Information                      |
+| [xblocks wallet](https://xen.pub/xblocks.php)                | XenBlocks Wallet Check                               |
+| [xblocks dashboard](https://xen.pub/index-xenblocks.php)     | XenBlocks Dashboard                                  |
+| [xblocks nodes](https://xen.pub/xblocks-nodes.php)           | XenBlocks Node Distribution Across Different Regions |
+| [xblocks live listener](https://xen.pub/xblocks-live.php)    | XenBlocks Live Listener                              |
 
 
 
