@@ -16,6 +16,7 @@ A curated list of XEN Crypto Ecosystem.
 | [xen.network](https://xen.nework)                |             |
 | [vmpx.io](vmpx.io)                               |             |
 | [XenBlocks.io](https://xenblocks.io/leaderboard) |             |
+| [X1Blockchain.net](https://x1blockchain.net/)    |             |
 | [Xenpedia.com](https://info.xenpedia.com)        |             |
 
 
