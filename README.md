@@ -75,6 +75,7 @@ A curated list of XEN Crypto Ecosystem.
 | ------------------------------------------------------------ | ---------------------------------------------------- |
 | [xenminer](https://github.com/jacklevin74/xenminer/)         | XenBlocks CPU Miner (Official)                       |
 | [XENGPUMiner](https://github.com/shanhaicoder/XENGPUMiner/)  | XenBlocks GPU Miner (Official)                       |
+| [xgpu](https://github.com/JozefJarosciak/xgpu)               | XENBLOCKS - Effortless GPU Mining on VAST.AI         |
 | [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | VAST.AI GPU Performance Aggregator for XENGPUMiners  |
 | [hashhead.io](https://hashhead.io/)                          | XenBlocks Wallet Check                               |
 | [explorer.hashhead.io](https://explorer.hashhead.io/)        | XenBlocks Community Information                      |
@@ -110,4 +111,12 @@ A curated list of XEN Crypto Ecosystem.
 | [XenVault](https://xenvault.com)                    |             |
 
 
+
+## Telegram Groups
+
+| Telegram Groups |      |
+| --------------- | ---- |
+|                 |      |
+|                 |      |
+|                 |      |
 
