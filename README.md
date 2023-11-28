@@ -89,26 +89,27 @@ A curated list of XEN Crypto Ecosystem.
 
 ## Community Projects
 
-| Community Projects                                  | Description |
-| --------------------------------------------------- | ----------- |
-| [XENtoshiBlocks](https://xentoshiblocks.com)        |             |
-| [DBXen, DBXeNFT](https://dbxen.org)                 |             |
-| [FENIX](https://fenix.fyi)                          |             |
-| [GDXEN](https://gdxen.xyz)                          |             |
-| [TGXen](https://tgxen.thegraysecosystem.com)        |             |
-| [XEL Crypto](https://app.xelcrypto.io)              |             |
-| [XENDoge](https://xendoge.network)                  |             |
-| [XENERGY](https://xenergy.world/xenergy)            |             |
-| [XenFlex](https://xenflex.io)                       |             |
-| [XENGame](https://xen.game)                         |             |
-| [XenHeads](https://https://twitter.com/XenHeadsNFT) |             |
-| [Xenify](https://xenify.io)                         |             |
-| [Xenlon Mars](https://xenlonmars.com)               |             |
-| [XENON](https://app.xenon.tools)                    |             |
-| [XEN Pepe](https://xenpepe.win)                     |             |
-| [XenPrana](https://https://twitter.com/Relaxndivs)  |             |
-| [XENPunks](https://xenpunks.io)                     |             |
-| [XenVault](https://xenvault.com)                    |             |
+| Community Projects                                  | Description                                                  |
+| --------------------------------------------------- | ------------------------------------------------------------ |
+| [XENtoshiBlocks](https://xentoshiblocks.com)        |                                                              |
+| [DBXen, DBXeNFT](https://dbxen.org)                 |                                                              |
+| [FENIX](https://fenix.fyi)                          |                                                              |
+| [GDXEN](https://gdxen.xyz)                          |                                                              |
+| [XENBOX](https://xenbox.one/)                       | XENBOX protocol adopts the mechanism of automatic compounding, which automatically compounds the protocol rewards into the staking pool, maximizes your profits, and the rewards come from the XENBOX official website staking. |
+| [TGXen](https://tgxen.thegraysecosystem.com)        |                                                              |
+| [XEL Crypto](https://app.xelcrypto.io)              |                                                              |
+| [XENDoge](https://xendoge.network)                  |                                                              |
+| [XENERGY](https://xenergy.world/xenergy)            |                                                              |
+| [XenFlex](https://xenflex.io)                       |                                                              |
+| [XENGame](https://xen.game)                         |                                                              |
+| [XenHeads](https://https://twitter.com/XenHeadsNFT) |                                                              |
+| [Xenify](https://xenify.io)                         |                                                              |
+| [Xenlon Mars](https://xenlonmars.com)               |                                                              |
+| [XENON](https://app.xenon.tools)                    |                                                              |
+| [XEN Pepe](https://xenpepe.win)                     |                                                              |
+| [XenPrana](https://https://twitter.com/Relaxndivs)  |                                                              |
+| [XENPunks](https://xenpunks.io)                     |                                                              |
+| [XenVault](https://xenvault.com)                    |                                                              |
 
 
 
