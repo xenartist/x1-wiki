@@ -84,6 +84,7 @@ A curated list of XEN Crypto Ecosystem.
 | [xblocks dashboard](https://xen.pub/index-xenblocks.php)     | XenBlocks Dashboard                                  |
 | [xblocks nodes](https://xen.pub/xblocks-nodes.php)           | XenBlocks Node Distribution Across Different Regions |
 | [xblocks live listener](https://xen.pub/xblocks-live.php)    | XenBlocks Live Listener                              |
+| [X1 Scan Bot](https://t.me/x1_scan_bot)                      | XenBlocks Info in Telegram                           |
 
 
 
