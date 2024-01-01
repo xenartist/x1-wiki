@@ -114,7 +114,7 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-## Community Youtube Channels
+## Community YouTube Channels
 
 | YouTube Channel                                              | Description |
 | ------------------------------------------------------------ | ----------- |
