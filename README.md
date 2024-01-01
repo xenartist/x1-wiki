@@ -114,6 +114,22 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
+## Community Youtube Channels
+
+| YouTube Channel                                              | Description |
+| ------------------------------------------------------------ | ----------- |
+| [Crypto Profeta EN](https://www.youtube.com/@cryptoprofetaen7710) |             |
+| [CryptoBruhhh](https://www.youtube.com/@CryptoBruhhh)        |             |
+| [Crypto Kindness](https://www.youtube.com/@cryptokindness4504) |             |
+| [Crypto TrVon](https://www.youtube.com/@TrVon)               |             |
+| [333Crypto](https://www.youtube.com/@333Crypto)              |             |
+| [CryptoSlo](https://www.youtube.com/@CRYPTOSLO_OFFICIAL)     |             |
+| [Maxim Broadcast](https://www.youtube.com/@MaximB)           |             |
+| [TreeCityWes](https://www.youtube.com/@TreeCityWes)          |             |
+| [Nakamoto Crypto](https://www.youtube.com/@NakamotoCrypto)   |             |
+
+
+
 ## Telegram Groups
 
 | Telegram Groups |      |
