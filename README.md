@@ -10,14 +10,14 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-| Official Website                                 | Description |
-| ------------------------------------------------ | ----------- |
-| [Faircrypto.org](https://faircrypto.org)         |             |
-| [xen.network](https://xen.nework)                |             |
-| [vmpx.io](vmpx.io)                               |             |
-| [XenBlocks.io](https://xenblocks.io/leaderboard) |             |
-| [X1Blockchain.net](https://x1blockchain.net/)    |             |
-| [Xenpedia.com](https://info.xenpedia.com)        |             |
+| Official Website                                 | Description                                                  |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| [Faircrypto.org](https://faircrypto.org)         | Fair Crypto Foundation                                       |
+| [xen.network](https://xen.nework)                | XEN Universe                                                 |
+| [vmpx.io](vmpx.io)                               | VMPX (BRC20 & ERC20)                                         |
+| [XenBlocks.io](https://xenblocks.io/leaderboard) | Proof of Work element of [X1 Blockchain™](https://x1blockchain.net/) |
+| [X1Blockchain.net](https://x1blockchain.net/)    | X1 Blockchain™ - Built On First Principles of Crypto         |
+| [Xenpedia.com](https://info.xenpedia.com)        | Wikipedia for XEN                                            |
 
 
 
