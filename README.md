@@ -88,6 +88,16 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
+## X1 Tools
+
+| X1 Tools                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [X1/XenBlocks Instructions](https://github.com/JozefJarosciak/X1) | How-To: Set Up Your X1 Testnet Validator/How-To: Mine XenBlocks with 1 line of Code |
+|                                                              |                                                              |
+|                                                              |                                                              |
+
+
+
 ## Community Projects
 
 | Community Projects                                  | Description                                                  |
