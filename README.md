@@ -71,20 +71,21 @@ A curated list of XEN Crypto Ecosystem.
 
 ## XenBlocks Tools
 
-| XenBlocks Tools                                              | Description                                          |
-| ------------------------------------------------------------ | ---------------------------------------------------- |
-| [xenminer](https://github.com/jacklevin74/xenminer/)         | XenBlocks CPU Miner (Official)                       |
-| [XENGPUMiner](https://github.com/shanhaicoder/XENGPUMiner/)  | XenBlocks GPU Miner (Official)                       |
-| [xgpu](https://github.com/JozefJarosciak/xgpu)               | XENBLOCKS - Effortless GPU Mining on VAST.AI         |
-| [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | VAST.AI GPU Performance Aggregator for XENGPUMiners  |
-| [hashhead.io](https://hashhead.io/)                          | XenBlocks Wallet Check                               |
-| [explorer.hashhead.io](https://explorer.hashhead.io/)        | XenBlocks Community Information                      |
-| [xenmaps](https://xenmaps.io/)                               | XenMaps: The First Inscription Project on XenBlocks  |
-| [xblocks wallet](https://xen.pub/xblocks.php)                | XenBlocks Wallet Check                               |
-| [xblocks dashboard](https://xen.pub/index-xenblocks.php)     | XenBlocks Dashboard                                  |
-| [xblocks nodes](https://xen.pub/xblocks-nodes.php)           | XenBlocks Node Distribution Across Different Regions |
-| [xblocks live listener](https://xen.pub/xblocks-live.php)    | XenBlocks Live Listener                              |
-| [X1 Scan Bot](https://t.me/x1_scan_bot)                      | XenBlocks Info in Telegram                           |
+| XenBlocks Tools                                              | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [xenminer](https://github.com/jacklevin74/xenminer/)         | XenBlocks CPU Miner (Official) - Python                      |
+| [XENGPUMiner](https://github.com/shanhaicoder/XENGPUMiner/)  | XenBlocks GPU Miner (Official) - Python / C++                |
+| [XenblocksMiner](https://github.com/woodysoil/XenblocksMiner/) | XenBlocks GPU Miner (Official) - A more optimized and user-friendly xenblocks miner |
+| [xgpu](https://github.com/JozefJarosciak/xgpu)               | XENBLOCKS - Effortless GPU Mining on VAST.AI                 |
+| [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | VAST.AI GPU Performance Aggregator for XENGPUMiners          |
+| [hashhead.io](https://hashhead.io/)                          | XenBlocks Wallet Check                                       |
+| [explorer.hashhead.io](https://explorer.hashhead.io/)        | XenBlocks Community Information                              |
+| [xenmaps](https://xenmaps.io/)                               | XenMaps: The First Inscription Project on XenBlocks          |
+| [xblocks wallet](https://xen.pub/xblocks.php)                | XenBlocks Wallet Check                                       |
+| [xblocks dashboard](https://xen.pub/index-xenblocks.php)     | XenBlocks Dashboard                                          |
+| [xblocks nodes](https://xen.pub/xblocks-nodes.php)           | XenBlocks Node Distribution Across Different Regions         |
+| [xblocks live listener](https://xen.pub/xblocks-live.php)    | XenBlocks Live Listener                                      |
+| [X1 Scan Bot](https://t.me/x1_scan_bot)                      | XenBlocks Info in Telegram                                   |
 
 
 
