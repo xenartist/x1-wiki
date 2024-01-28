@@ -21,12 +21,12 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-| Twitter                                        | Description |
-| ---------------------------------------------- | ----------- |
-| [XEN_Crypto](https://twitter.com/XEN_Crypto)   |             |
-| [$VMPX](https://twitter.com/VMPX_brc20)        |             |
-| [mrJackLevin](https://twitter.com/mrJackLevin) |             |
-| [XEN TZU](https://twitter.com/ackebom)         |             |
+| Twitter                                        | Description                                                  |
+| ---------------------------------------------- | ------------------------------------------------------------ |
+| [XEN_Crypto](https://twitter.com/XEN_Crypto)   | XEN Crypto Official                                          |
+| [$VMPX](https://twitter.com/VMPX_brc20)        | VMPX Official (vmpx.io)                                      |
+| [mrJackLevin](https://twitter.com/mrJackLevin) | Founder of ⓧFair Cryptoⓧ/XEN Crypto™/X1 Blockchain™/Xenblocks™/(vmpx.io) |
+| [XEN TZU](https://twitter.com/ackebom)         | Fair Crypto Foundation                                       |
 
 
 
