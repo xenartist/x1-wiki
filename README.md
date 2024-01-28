@@ -76,8 +76,9 @@ A curated list of XEN Crypto Ecosystem.
 | [xenminer](https://github.com/jacklevin74/xenminer/)         | XenBlocks CPU Miner (Official) - Python                      |
 | [XENGPUMiner](https://github.com/shanhaicoder/XENGPUMiner/)  | XenBlocks GPU Miner (Official) - Python / C++                |
 | [XenblocksMiner](https://github.com/woodysoil/XenblocksMiner/) | XenBlocks GPU Miner (Official) - A more optimized and user-friendly xenblocks miner |
-| [xgpu](https://github.com/JozefJarosciak/xgpu)               | XENBLOCKS - Effortless GPU Mining on VAST.AI                 |
-| [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | VAST.AI GPU Performance Aggregator for XENGPUMiners          |
+| [Vast.ai](https://cloud.vast.ai/?ref_id=87804)               | [Vast.ai](https://cloud.vast.ai/?ref_id=87804) is the market leader in low-cost cloud GPU rental (Recommend) |
+| [xgpu](https://github.com/JozefJarosciak/xgpu)               | Use one simple interface to save 5-6X on GPU compute. XENBLOCKS - Effortless GPU Mining on [Vast.ai](https://cloud.vast.ai/?ref_id=87804) |
+| [vastai gpu performance aggregator bot](https://github.com/tr4vLer/vastai_instances_aggregator_bot) | [Vast.ai](https://cloud.vast.ai/?ref_id=87804) GPU Performance Aggregator for XENGPUMiners |
 | [hashhead.io](https://hashhead.io/)                          | XenBlocks Wallet Check                                       |
 | [explorer.hashhead.io](https://explorer.hashhead.io/)        | XenBlocks Community Information                              |
 | [xenmaps](https://xenmaps.io/)                               | XenMaps: The First Inscription Project on XenBlocks          |
