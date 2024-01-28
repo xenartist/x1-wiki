@@ -14,6 +14,7 @@ A curated list of XEN Crypto Ecosystem.
 | ------------------------------------------------ | ------------------------------------------------------------ |
 | [Faircrypto.org](https://faircrypto.org)         | Fair Crypto Foundation                                       |
 | [xen.network](https://xen.nework)                | XEN Universe                                                 |
+| [Xen Network Docs](https://docs.xen.network/)    | Xen Network Docs - The home of Xen Crypto and the X1 Blockchain |
 | [vmpx.io](vmpx.io)                               | VMPX (BRC20 & ERC20)                                         |
 | [XenBlocks.io](https://xenblocks.io/leaderboard) | Proof of Work element of [X1 Blockchain™](https://x1blockchain.net/) |
 | [X1Blockchain.net](https://x1blockchain.net/)    | X1 Blockchain™ - Built On First Principles of Crypto         |
