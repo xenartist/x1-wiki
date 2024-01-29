@@ -31,11 +31,11 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-| YouTube Channel                                 | Description |
-| ----------------------------------------------- | ----------- |
-| [MrJackLevin](https://youtube.com/@MrJackLevin) |             |
-| [Xenducation](https://youtube.com/@xenducation) |             |
-|                                                 |             |
+| YouTube Channel                                 | Description                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| [MrJackLevin](https://youtube.com/@MrJackLevin) | I am Jack Levin                                              |
+| [Xenducation](https://youtube.com/@xenducation) | Information and updates of everything XEN protocol. Not Financial Advice. |
+|                                                 |                                                              |
 
 
 
