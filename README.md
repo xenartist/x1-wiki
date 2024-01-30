@@ -39,15 +39,15 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-| Telegram Group                              | Description |
-| ------------------------------------------- | ----------- |
-| [XENCryptoTalk](https://t.me/XENCryptoTalk) |             |
-| [X1 Chain](https://t.me/+qPGGU8WFFtczNDEz)  |             |
-| [XenBlocks](https://t.me/+7L2Z8vArV103NmJj) |             |
-| [Ordinals/BRC-20](https://t.me/XENBitcoin)  |             |
-| [DApps](https://t.me/xendapp)               |             |
-| [XEN Price](t.me/XENPrice )                 |             |
-| [Help](https://t.me/xenhelp)                |             |
+| Telegram Group                              | Description                                                  |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| [XENCryptoTalk](https://t.me/XENCryptoTalk) | Talk about XEN Crypto, Tokenomics, Protocols, Design, Future (Official) |
+| [X1 Chain](https://t.me/+qPGGU8WFFtczNDEz)  | X1 Blockchain™ (Official)                                    |
+| [XenBlocks](https://t.me/+7L2Z8vArV103NmJj) | XenBlocks is a high performance blockchain design project. Borrowing immutability and data consistency model from Bitcoin, utilizing Proof of Work (POW) for block generation and voting. The high performance of the chain is achieved by decoupling sequentia (Official) |
+| [Ordinals/BRC-20](https://t.me/XENBitcoin)  | Everything ordinals, BRC-20 and XEN integrating into BTC (Official) |
+| [DApps](https://t.me/xendapp)               | XEN Dapps (Official)                                         |
+| [XEN Price](t.me/XENPrice )                 | XEN Price chat (Official)                                    |
+| [Help](https://t.me/xenhelp)                | XEN Help (Official)                                          |
 
 
 
