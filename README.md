@@ -127,17 +127,17 @@ A curated list of XEN Crypto Ecosystem.
 
 ## Community YouTube Channels
 
-| YouTube Channel                                              | Description |
-| ------------------------------------------------------------ | ----------- |
-| [Crypto Profeta EN](https://www.youtube.com/@cryptoprofetaen7710) |             |
-| [CryptoBruhhh](https://www.youtube.com/@CryptoBruhhh)        |             |
-| [Crypto Kindness](https://www.youtube.com/@cryptokindness4504) |             |
-| [Crypto TrVon](https://www.youtube.com/@TrVon)               |             |
-| [333Crypto](https://www.youtube.com/@333Crypto)              |             |
-| [CryptoSlo](https://www.youtube.com/@CRYPTOSLO_OFFICIAL)     |             |
-| [Maxim Broadcast](https://www.youtube.com/@MaximB)           |             |
-| [TreeCityWes](https://www.youtube.com/@TreeCityWes)          |             |
-| [Nakamoto Crypto](https://www.youtube.com/@NakamotoCrypto)   |             |
+| YouTube Channel                                              | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Crypto Profeta EN](https://www.youtube.com/@cryptoprofetaen7710) | Xen Crypto Beginner's guide to Minting FREE XEN Crypto a step by step Tutorial FREE CRYPTO Strategy |
+| [CryptoBruhhh](https://www.youtube.com/@CryptoBruhhh)        | A DJ/Producer that loves crypto... WHATS GOOD BRUH           |
+| [Crypto Kindness](https://www.youtube.com/@cryptokindness4504) | @cryptokindness4504                                          |
+| [Crypto TrVon](https://www.youtube.com/@TrVon)               | crypto content from a person who has been 24/7 crypto since 2015 |
+| [333Crypto](https://www.youtube.com/@333Crypto)              | Physician talking Crypto. Top channel for Bitcoin, Ethereum, Altcoin & Crypto News. Not financial advice. For educational & entertainment purposes only. Blessings. |
+| [CryptoSlo](https://www.youtube.com/@CRYPTOSLO_OFFICIAL)     | CryptoCurrency Entertainment Videos on How to Buy, Sell, Hold, and Earn Passive Income with Crypto. |
+| [Maxim Broadcast](https://www.youtube.com/@MaximB)           | Truth so that Life. To know what is valuable, to know how to get value, and to put that knowledge into its logical actions. I hope you listen to the WHY behind anything I'm saying. I KNOW I don't know it all!  Please take the good, and leave the bad! |
+| [TreeCityWes](https://www.youtube.com/@TreeCityWes)          | \#Xen #StayXen                                               |
+| [Nakamoto Crypto](https://www.youtube.com/@NakamotoCrypto)   | I talk about crypto daily crypto news topics on a variety of cryptos such as xen crypto, dbxen crypto dbxen nft. |
 
 
 
