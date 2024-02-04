@@ -138,6 +138,7 @@ A curated list of XEN Crypto Ecosystem.
 | [Maxim Broadcast](https://www.youtube.com/@MaximB)           | Truth so that Life. To know what is valuable, to know how to get value, and to put that knowledge into its logical actions. I hope you listen to the WHY behind anything I'm saying. I KNOW I don't know it all!  Please take the good, and leave the bad! |
 | [TreeCityWes](https://www.youtube.com/@TreeCityWes)          | \#Xen #StayXen                                               |
 | [Nakamoto Crypto](https://www.youtube.com/@NakamotoCrypto)   | I talk about crypto daily crypto news topics on a variety of cryptos such as xen crypto, dbxen crypto dbxen nft. |
+| [CryptoAudiKing](https://www.youtube.com/@CryptoAudiKingg)   | SUB IF YOU WANT TO BE A CRYPTO MILLIONAIRE!                  |
 
 
 
