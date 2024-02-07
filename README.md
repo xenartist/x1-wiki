@@ -92,16 +92,6 @@ A curated list of XEN Crypto Ecosystem.
 
 
 
-## X1 Tools
-
-| X1 Tools                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [X1/XenBlocks Instructions](https://github.com/JozefJarosciak/X1) | How-To: Set Up Your X1 Testnet Validator/How-To: Mine XenBlocks with 1 line of Code |
-|                                                              |                                                              |
-|                                                              |                                                              |
-
-
-
 ## Community Projects
 
 | Community Projects                           | Description                                                  |
@@ -145,9 +135,35 @@ A curated list of XEN Crypto Ecosystem.
 
 ## Telegram Groups
 
-| Telegram Groups |      |
-| --------------- | ---- |
-|                 |      |
-|                 |      |
-|                 |      |
+| Telegram Groups                              |      |
+| -------------------------------------------- | ---- |
+| [XEN English](t.me/XENCryptoTalk)            |      |
+| [XEN Australia](t.me/XENCryptoAustralia)     |      |
+| [XEN Bengali](t.me/XENCryptoBengali)         |      |
+| [XEN Chinese](t.me/XENChatCn)                |      |
+| [XEN Dutch](t.me/XENCryptoDutch)             |      |
+| [XEN French](t.me/XENcryptoFranco)           |      |
+| [XEN German](t.me/xencryptodeutsch)          |      |
+| [XEN Greek](t.me/XENCryptoGreek)             |      |
+| [XEN India](t.me/XENCryptoIndia)             |      |
+| [XEN Indonesia](t.me/XENCryptoId)            |      |
+| [XEN Italian](t.me/xen_italia)               |      |
+| [XEN Japanese](t.me/XENCryptoJapan)          |      |
+| [XEN Kazakh](t.me/XENCryptoKazakh)           |      |
+| [XEN Persian](t.me/XENCryptoPersian)         |      |
+| [XEN Philippines](t.me/XENCryptoPhilippines) |      |
+| [XEN Polish](t.me/XENCryptoPL)               |      |
+| [XEN Portuguese](t.me/XENPortugues)          |      |
+| [XEN Russian](t.me/XENCryptoRussian)         |      |
+| [XEN Slovak](t.me/XEN_crypto_sk_cz)          |      |
+| [XEN Korea](t.me/XENCryptoSouthKorea)        |      |
+| [XEN Spanish](t.me/XEN95Espanol)             |      |
+| [XEN Thai](t.me/XENCryptoThai)               |      |
+| [XEN Turkish](t.me/XENCryptoTurkish)         |      |
+| [XEN Ukrainian](t.me/XENCryptoUA)            |      |
+| [XEN Vietnamese](t.me/XENvietnam)            |      |
+| [XEN Balkan](https://t.me/xenbalkan)         |      |
 
+
+
+Reference: [XENFORMATION](t.me/xenformation)
