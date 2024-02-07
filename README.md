@@ -135,35 +135,35 @@ A curated list of XEN Crypto Ecosystem.
 
 ## Telegram Groups
 
-| Telegram Groups                              |      |
-| -------------------------------------------- | ---- |
-| [XEN English](t.me/XENCryptoTalk)            |      |
-| [XEN Australia](t.me/XENCryptoAustralia)     |      |
-| [XEN Bengali](t.me/XENCryptoBengali)         |      |
-| [XEN Chinese](t.me/XENChatCn)                |      |
-| [XEN Dutch](t.me/XENCryptoDutch)             |      |
-| [XEN French](t.me/XENcryptoFranco)           |      |
-| [XEN German](t.me/xencryptodeutsch)          |      |
-| [XEN Greek](t.me/XENCryptoGreek)             |      |
-| [XEN India](t.me/XENCryptoIndia)             |      |
-| [XEN Indonesia](t.me/XENCryptoId)            |      |
-| [XEN Italian](t.me/xen_italia)               |      |
-| [XEN Japanese](t.me/XENCryptoJapan)          |      |
-| [XEN Kazakh](t.me/XENCryptoKazakh)           |      |
-| [XEN Persian](t.me/XENCryptoPersian)         |      |
-| [XEN Philippines](t.me/XENCryptoPhilippines) |      |
-| [XEN Polish](t.me/XENCryptoPL)               |      |
-| [XEN Portuguese](t.me/XENPortugues)          |      |
-| [XEN Russian](t.me/XENCryptoRussian)         |      |
-| [XEN Slovak](t.me/XEN_crypto_sk_cz)          |      |
-| [XEN Korea](t.me/XENCryptoSouthKorea)        |      |
-| [XEN Spanish](t.me/XEN95Espanol)             |      |
-| [XEN Thai](t.me/XENCryptoThai)               |      |
-| [XEN Turkish](t.me/XENCryptoTurkish)         |      |
-| [XEN Ukrainian](t.me/XENCryptoUA)            |      |
-| [XEN Vietnamese](t.me/XENvietnam)            |      |
-| [XEN Balkan](https://t.me/xenbalkan)         |      |
+| Telegram Groups                                      |      |
+| ---------------------------------------------------- | ---- |
+| [XEN English](https://t.me/XENCryptoTalk)            |      |
+| [XEN Australia](https://t.me/XENCryptoAustralia)     |      |
+| [XEN Bengali](https://t.me/XENCryptoBengali)         |      |
+| [XEN Chinese](https://t.me/XENChatCn)                |      |
+| [XEN Dutch](https://t.me/XENCryptoDutch)             |      |
+| [XEN French](https://t.me/XENcryptoFranco)           |      |
+| [XEN German](https://t.me/xencryptodeutsch)          |      |
+| [XEN Greek](https://t.me/XENCryptoGreek)             |      |
+| [XEN India](https://t.me/XENCryptoIndia)             |      |
+| [XEN Indonesia](https://t.me/XENCryptoId)            |      |
+| [XEN Italian](https://t.me/xen_italia)               |      |
+| [XEN Japanese](https://t.me/XENCryptoJapan)          |      |
+| [XEN Kazakh](https://t.me/XENCryptoKazakh)           |      |
+| [XEN Persian](https://t.me/XENCryptoPersian)         |      |
+| [XEN Philippines](https://t.me/XENCryptoPhilippines) |      |
+| [XEN Polish](https://t.me/XENCryptoPL)               |      |
+| [XEN Portuguese](https://t.me/XENPortugues)          |      |
+| [XEN Russian](https://t.me/XENCryptoRussian)         |      |
+| [XEN Slovak](https://t.me/XEN_crypto_sk_cz)          |      |
+| [XEN Korea](https://t.me/XENCryptoSouthKorea)        |      |
+| [XEN Spanish](https://t.me/XEN95Espanol)             |      |
+| [XEN Thai](https://t.me/XENCryptoThai)               |      |
+| [XEN Turkish](https://t.me/XENCryptoTurkish)         |      |
+| [XEN Ukrainian](https://t.me/XENCryptoUA)            |      |
+| [XEN Vietnamese](https://t.me/XENvietnam)            |      |
+| [XEN Balkan](https://t.me/xenbalkan)                 |      |
 
 
 
-Reference: [XENFORMATION](t.me/xenformation)
+Reference: [XENFORMATION](https://t.me/xenformation)
