@@ -131,6 +131,7 @@ A curated list of XEN Crypto Ecosystem. (Reference: [XENFORMATION](https://t.me/
 | [TreeCityWes](https://www.youtube.com/@TreeCityWes)          | \#Xen #StayXen                                               |
 | [Nakamoto Crypto](https://www.youtube.com/@NakamotoCrypto)   | I talk about crypto daily crypto news topics on a variety of cryptos such as xen crypto, dbxen crypto dbxen nft. |
 | [CryptoAudiKing](https://www.youtube.com/@CryptoAudiKingg)   | SUB IF YOU WANT TO BE A CRYPTO MILLIONAIRE!                  |
+| [TheJoker]([kick.com/thejoker](https://t.co/ICoCRB5Em2))     | \#1 Drama Reporting Show of KICK. DM me your story. LITERALLY the 2nd verified channel on Kick. |
 
 
 
