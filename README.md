@@ -1,6 +1,6 @@
 # X1 Wiki
 
-A Wiki Page of X1 Blockchain/XEN Crypto Ecosystem. 
+A Simple Wiki Page of X1 Blockchain/XEN Crypto Ecosystem. 
 
 [TOC]
 
