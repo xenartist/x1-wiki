@@ -1,6 +1,6 @@
-# Awesome XEN
+# X1 Wiki
 
-A curated list of XEN Crypto Ecosystem. (Reference: [XENFORMATION](https://t.me/xenformation))
+A Wiki Page of X1 Blockchain/XEN Crypto Ecosystem. 
 
 [TOC]
 
