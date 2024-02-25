@@ -1,6 +1,6 @@
 # [X1 Wiki - https://x1.wiki](https://x1.wiki/)
 
-[A Simple Wiki Page of X1 Blockchain/XEN Crypto Ecosystem.](X1.Wiki - A Simple Wiki Page of X1 Blockchain XEN Crypto Ecosystem.md) 
+A Simple Wiki Page of X1 Blockchain/XEN Crypto Ecosystem. 
 
 [![GitHub license](https://img.shields.io/github/license/xenartist/x1-wiki.svg)](https://github.com/xenartist/x1-wiki/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/xenartist/x1-wiki.svg)](https://github.com/xenartist/x1-wiki/stargazers)
