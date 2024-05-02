@@ -101,7 +101,7 @@ cat ~/.config/solana/id.json
 
 
 
-### 2. Download solxen-tx miner tool
+### 4. Download solxen-tx miner tool
 
 * Go to https://github.com/mmc-98/solxen-tx/releases
 * Download the latest release (Windows/Mac/Linux)
