@@ -1,4 +1,6 @@
-# solXEN挖矿中文简明教程
+# solXEN挖矿中文简明教程 2024.05.11
+
+文档维护 by [xen_artist](https://twitter.com/xen_artist)
 
 ## 1. 安装 Phantom 网页钱包 （或者任意支持Solana的Web3钱包，比如OKX/SolFlare等）
 
