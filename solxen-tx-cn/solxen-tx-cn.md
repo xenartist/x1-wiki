@@ -2,7 +2,7 @@
 
 ## 1. 安装 Phantom 网页钱包 （或者任意支持Solana的Web3钱包，比如OKX/SolFlare等）
 
-* 如果是第一次创建账户，会生成12个单词的助记词，保存下来，会在solxen-tx的配置文件中用到；
+* 如果是第一次创建账户，会生成12个单词的助记词，保存下来，将在solxen-tx的配置文件中用到；
 * 如果不是第一次创建账户，则从已有账户导出12个单词的助记词即可；
 * 为了方便理解，这里举例12个单词的助记词为：
 
@@ -21,7 +21,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 * macOS版本（Intel CPU）：solxen-tx-darwin-amd64.tar.gz
 * macOS版本（M1/M2/M3 CPU）：solxen-tx-darwin-arm64.tar.gz
 * Linux版本（Intel/AMD CPU）：solxen-tx-linux-amd64.tar.gz
-* Linux版本（ARM嵌入式CPU）：solxen-tx-darwin-arm64.tar.gz
+* Linux版本（ARM嵌入式CPU）：solxen-tx-linux-arm64.tar.gz
 
 ## 3. 配置文件 solxen-tx.yaml
 
