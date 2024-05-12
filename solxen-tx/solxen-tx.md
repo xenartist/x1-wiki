@@ -184,6 +184,6 @@ Sol:
 ## 7. Other Reference Information 
 
 * solXEN Mining Whitepaper: https://docs.solxen.io/
-* solXEN Mining Leaderboard: https://sol-xen-app.infrafc.org/leaderboard
+* solXEN Mining Leaderboard: https://sol-xen-app.infrafc.org/leaderboard [backup: https://leaderboard.solxen.io/]
 * solXEN Mining English Telegram: https://t.me/+Z5kEez70pyQ5NTAz
 * X1/XEN ecosystem wikipedia: [https://x1.wiki](https://x1.wiki/)

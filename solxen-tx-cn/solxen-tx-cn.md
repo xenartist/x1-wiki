@@ -179,7 +179,7 @@ Sol:
 ## 7. 其他参考信息
 
 * solXEN挖矿白皮书：https://docs.solxen.io/
-* solXEN挖矿排行榜：https://sol-xen-app.infrafc.org/leaderboard
+* solXEN挖矿排行榜：https://sol-xen-app.infrafc.org/leaderboard [备用: https://leaderboard.solxen.io/]
 * solXEN挖矿英文电报：https://t.me/+Z5kEez70pyQ5NTAz
 * solXEN挖矿中文电报：https://t.me/XENChatCn
 * X1/XEN生态百科全书：https://x1.wiki
