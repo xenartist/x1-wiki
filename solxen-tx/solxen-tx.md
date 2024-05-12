@@ -1,164 +1,77 @@
-# solxen-tx User Guide
 
-## SOLANA Devnet
+# solXEN Mining User Guide 2024.05.11 
 
-### Mac & Linux
+Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
-### 1.1 Download solana wallet
+## 1. Install the Phantom web wallet (or any Web3 wallet that supports Solana, such as OKX/SolFlare, etc.) 
 
-- Open your favorite Terminal application
-- Install the Solana release [v1.18.12](https://github.com/solana-labs/solana/releases/tag/v1.18.12) on your machine by running:
+* If it's the first time creating an account, a 12-word mnemonic will be generated. Save it, as it will be used in the solxen-tx configuration file.
 
-```
-sh -c "$(curl -sSfL https://release.solana.com/v1.18.12/install)"
-```
+* If it's not the first time creating an account, export the 12-word mnemonic from the existing account.
 
-- The following output indicates a successful update:
+* For easy understanding, here is an example of a 12-word mnemonic: leaf jealous olympic later mistake slim oven depth under near very frown 
 
-```
-downloading v1.18.12 installer
-Configuration: /home/solana/.config/solana/install/config.yml
-Active release directory: /home/solana/.local/share/solana/install/active_release
-* Release version: v1.18.12
-* Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.12/solana-release-x86_64-unknown-linux-gnu.tar.bz2
-Update successful
-```
+* Note: The master wallet is generally the first wallet address.
 
-- Depending on your system, the end of the installer messaging may prompt you to
+## 2. Download the latest version of the solxen-tx mining client (Go language version) 
 
-```
-Please update your PATH environment variable to include the solana programs:
-```
+* Download link: https://github.com/mmc-98/solxen-tx/releases
+* Windows version: solxen-tx-windows-amd64.zip
+* macOS version (Intel CPU): solxen-tx-darwin-amd64.tar.gz
+* macOS version (M1/M2/M3 CPU): solxen-tx-darwin-arm64.tar.gz
+* Linux version (Intel/AMD CPU): solxen-tx-linux-amd64.tar.gz
+* Linux version (ARM embedded CPU): solxen-tx-linux-arm64.tar.gz
 
-- If you get the above message, copy and paste the recommended command below it to update `PATH` 
+## 3. Configuration file solxen-tx.yaml 
 
-You can do this by adding the following line to your $HOME/.profile or /etc/profile (for a system-wide installation):
+* After extracting the downloaded zip file, you will see two files: one is the solxen-tx binary executable file, and the other is the solxen-tx.yaml configuration file.
 
-```
-export PATH="/home/ubuntu/.local/share/solana/install/active_release/bin:$PATH"
-```
+* Detailed explanation of the development network (devnet) configuration file:
 
-**Note:** Changes made to a profile file may not apply until the next time you log into your computer. To apply the changes immediately, just run the shell commands directly or execute them from the profile using a command such as `source $HOME/.profile`.
-
-- Confirm you have the desired version of `solana` installed by running:
-
-```
-solana --version
+```   
+Name: solxen-tx 
+Sol: 
+    Url: "[https://api.devnet.solana.com](https://api.devnet.solana.com/)"               # RPC address (replaceable) 
+    Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
+    Num: 1                                                                               # Concurrency (number of concurrent wallets) 
+    Fee: 3000                                                                            # Priority fee (in microLamports) 
+    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"                                 # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ProgramID: "Contract address on the development network"                             # solxen contract address 
+    Time: 1000                                                                           # Interval time (in milliseconds) 
+    HdPAth: m/44'/501'/0'/0'                                                             # Wallet address path (default web3 wallet) 
 ```
 
-- After a successful install, `solana-install update` may be used to easily update the Solana software to a newer version at any time.
+* Main network (mainnet) configuration file detailed explanation:
 
-
-
-### Windows
-
-### 1.2 Download solana wallet
-
-- Open a Command Prompt (`cmd.exe`) as an Administrator
-  - Search for Command Prompt in the Windows search bar. When the Command Prompt app appears, right-click and select “Open as Administrator”. If you are prompted by a pop-up window asking “Do you want to allow this app to make changes to your device?”, click Yes.
-- Copy and paste the following command, then press Enter to download the Solana installer into a temporary directory:
-
-```
-cmd /c "curl https://release.solana.com/v1.18.12/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\solana-install-tmp\solana-install-init.exe --create-dirs"
-```
-
-* Copy and paste the following command, then press Enter to install the latest version of Solana. If you see a security pop-up by your system, please select to allow the program to run.
-
-```
-C:\solana-install-tmp\solana-install-init.exe v1.18.12
-```
-
-* When the installer is finished, press Enter.
-* Close the command prompt window and re-open a new command prompt window as a normal user
-  - Search for "Command Prompt" in the search bar, then left click on the Command Prompt app icon, no need to run as Administrator)
-* Confirm you have the desired version of `solana` installed by entering:
-
-```
-solana --version
-```
-
-* After a successful install, `solana-install update` may be used to easily update the Solana software to a newer version at any time.
-
-
-
-### 2. Get SOL airdrop for testing
-
-* Create a new wallet
-
-```
-solana-keygen new
-```
-
-* Setup devnet
-
-```
-solana config set --url https://api.devnet.solana.com
-```
-
-* Get SOL airdrop
-
-```
-solana airdrop 1
-```
-
-* Check balance
-
-```
-solana balance
+```   
+Name: solxen-tx 
+Sol: 
+    Url: "[https://api.mainnet-beta.solana.com](https://api.mainnet-beta.solana.com/)"   # RPC address (replaceable) 
+    Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
+    Num: 1                                                                               # Concurrency (number of concurrent wallets) 
+    Fee: 3000                                                                            # Priority fee (in microLamports) 
+    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"                                 # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ProgramID: "Contract address on the main network"                                    # solxen contract address 
+    Time: 1000                                                                           # Interval time (in milliseconds) 
+    HdPAth: m/44'/501'/0'/0'                                                             # Wallet address path (default web3 wallet)
 ```
 
 
 
-## 3. Get private key for testing
+## 4. solXEN Mining 
+* After setting up the configuration file, run the solxen-tx binary executable file to start the program and initialize mining.
 
-* Get private key from id.json
+* At the beginning of the log, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1). Verify the wallet address in the web3 wallet to ensure that the recharged wallet address matches correctly.
 
-```
-cat ~/.config/solana/id.json
-```
+* Stop the program, recharge SOL to the mining wallet address.
 
-* Some strings like this:
+* After successful recharge, restart the program to officially start mining.
 
-```
-[125,204,125,4,46,223,194,107,117,50,42,73,200,176,74,74,30,83,239,156,176,207,193,19,123,73,223,128,217,72,17]
-```
+* Check personal mining information on the solXEN mining leaderboard: https://sol-xen-app.infrafc.org/leaderboard
 
-* Import this strings in Phantom wallet through 'Import Private Key'
-* After imported successfully, then 'Menu' -> Manage Accounts' -> choose this account -> 'Show Private Key' -> input password -> get the private key like this:
+## 5. Other Reference Information 
 
-```
-3WssD84uuzqGyuoycsdfsaeytbzt32qP9CyejqbQksqxxxx
-```
-
-* This private key will be used in solxen-tx miner tool
-
-
-
-### 4. Download solxen-tx miner tool
-
-* Go to https://github.com/mmc-98/solxen-tx/releases
-* Download the latest release (Windows/Mac/Linux)
-* Decompress the download release file
-* Modify the configuration file **solxen-tx.yaml**; you only need to change **Key** to your private key, and **ToAddr** to your xn airdrop address (ETH address format)
-
-```
-# sol config
-Name: solxen-tx
-Sol:
-  Url: "https://api.devnet.solana.com"                          # rpc address
-  Key: "3WssD84uuzqGyuoycsdfsaeytbzt32qP9CyejqbQksqxxxx"        # private key
-  Num: 1                                                        # concurrency
-  Fee: 3000                                                     # priority gas fee
-  ToAddr: "0x4A7766axxxx"          								# xn airdrop address (eth addr format)
-  ProgramID: "64SYet8RCT5ayZpMGbhcpk3vmt8UkwjZq8uy8Sd6V46A"     # solxen contract address
-  Time: 1000                                                    # [interval time(ms)]
-```
-
-* Also suggest to change **Time** to 30000 (30 seconds) if considering request-limitation of public rpc.
-* Run program solxen-tx in terminal/console/command
-
-
-
-## SOLANA Mainnet
-
-TODO
+* solXEN Mining Whitepaper: https://docs.solxen.io/
+* solXEN Mining Leaderboard: https://sol-xen-app.infrafc.org/leaderboard
+* solXEN Mining English Telegram: https://t.me/+Z5kEez70pyQ5NTAz
+* X1/XEN ecosystem wikipedia: [https://x1.wiki](https://x1.wiki/)
