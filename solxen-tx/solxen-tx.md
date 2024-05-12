@@ -143,7 +143,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 ```   
 Name: solxen-tx 
 Sol: 
-    Url: "[https://api.devnet.solana.com](https://api.devnet.solana.com/)"               # RPC address (replaceable) 
+    Url: "https://api.devnet.solana.com"               # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
     Num: 1                                                                               # Concurrency (number of concurrent wallets) 
     Fee: 3000                                                                            # Priority fee (in microLamports) 
@@ -158,7 +158,7 @@ Sol:
 ```   
 Name: solxen-tx 
 Sol: 
-    Url: "[https://api.mainnet-beta.solana.com](https://api.mainnet-beta.solana.com/)"   # RPC address (replaceable) 
+    Url: "https://api.mainnet-beta.solana.com"   # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
     Num: 1                                                                               # Concurrency (number of concurrent wallets) 
     Fee: 3000                                                                            # Priority fee (in microLamports) 
