@@ -143,14 +143,14 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 ```   
 Name: solxen-tx 
 Sol: 
-    Url: "https://api.devnet.solana.com"               # RPC address (replaceable) 
+    Url: "https://api.devnet.solana.com"                     # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
-    Num: 1                                                                               # Concurrency (number of concurrent wallets) 
-    Fee: 3000                                                                            # Priority fee (in microLamports) 
-    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"                                 # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
-    ProgramID: "Contract address on the development network"                             # solxen contract address 
-    Time: 1000                                                                           # Interval time (in milliseconds) 
-    HdPAth: m/44'/501'/0'/0'                                                             # Wallet address path (default) 
+    Num: 1                                                   # Concurrency (number of concurrent wallets) 
+    Fee: 3000                                                # Priority fee (in microLamports) 
+    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ProgramID: "Contract address on the development network" # solxen contract address 
+    Time: 1000                                               # Interval time (in milliseconds) 
+    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
 ```
 
 * Main network (mainnet) configuration file detailed explanation:
@@ -158,14 +158,14 @@ Sol:
 ```   
 Name: solxen-tx 
 Sol: 
-    Url: "https://api.mainnet-beta.solana.com"   # RPC address (replaceable) 
+    Url: "https://api.mainnet-beta.solana.com"               # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
-    Num: 1                                                                               # Concurrency (number of concurrent wallets) 
-    Fee: 3000                                                                            # Priority fee (in microLamports) 
-    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"                                 # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
-    ProgramID: "Contract address on the main network"                                    # solxen contract address 
-    Time: 1000                                                                           # Interval time (in milliseconds) 
-    HdPAth: m/44'/501'/0'/0'                                                             # Wallet address path (default)
+    Num: 1                                                   # Concurrency (number of concurrent wallets) 
+    Fee: 3000                                                # Priority fee (in microLamports) 
+    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ProgramID: "Contract address on the main network"        # solxen contract address 
+    Time: 1000                                               # Interval time (in milliseconds) 
+    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default)
 ```
 
 
