@@ -2,6 +2,8 @@
 
 文档维护 by [xen_artist](https://twitter.com/xen_artist)
 
+
+
 ## 1. 下载 Solana 钱包
 
 ### Mac & Linux
@@ -51,6 +53,8 @@ solana --version
 
 * 安装成功后，`solana-install update` 可以随时用于更新 Solana 软件至最新版本。
 
+
+
 ### Windows
 
 ### 1.2 下载 Solana 钱包
@@ -84,6 +88,8 @@ solana --version
 ```
 
 * 安装成功后，`solana-install update` 可以随时用于更新 Solana 软件至最新版本。
+
+
 
 ## 2. 创建新钱包
 
@@ -120,11 +126,15 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 * 上面生成的公钥（例如 *4tf7QSWxYFzmvicRimtJwCtuWfnPq43ZQxjkooCKKUJf*）是公共主钱包地址（通常是第一个地址），将用于充值 SOL以运行 `solxen-tx`。
 
+
+
 ## 3. 获取 DEVNET 的 SOL 空投（可选）
 
 * https://faucet.solana.com/
 * https://faucet.quicknode.com/solana/
 * https://solfaucet.com/
+
+
 
 ## 4. 下载最新版本的solxen-tx挖矿客户端（go语言版本）
 
@@ -134,6 +144,8 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 * macOS版本（M1/M2/M3 CPU）：solxen-tx-darwin-arm64.tar.gz
 * Linux版本（Intel/AMD CPU）：solxen-tx-linux-amd64.tar.gz
 * Linux版本（ARM嵌入式CPU）：solxen-tx-linux-arm64.tar.gz
+
+
 
 ## 5. 配置文件 solxen-tx.yaml
 
@@ -168,6 +180,8 @@ Sol:
   HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
 ```
 
+
+
 ## 6. solXEN挖矿
 
 * 配置文件设置好后，运行二进制可执行文件solxen-tx，启动程序，挖矿初始化；
@@ -175,6 +189,8 @@ Sol:
 * 停掉程序，充值SOL到挖矿钱包地址；
 * 充值成功后，再次启动程序，正式开始挖矿；
 * 在solXEN挖矿排行榜查看个人挖矿信息：https://sol-xen-app.infrafc.org/leaderboard
+
+
 
 ## 7. 其他参考信息
 

@@ -3,6 +3,8 @@
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
+
+
 ## 1. Download Solana Wallet
 
 ### Mac & Linux
@@ -119,11 +121,15 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 * The generated pubkey above (eg. *4tf7QSWxYFzmvicRimtJwCtuWfnPq43ZQxjkooCKKUJf*) is the public master wallet address (usually the 1st. one) will be used to recharge SOL for running solxen-tx.
 
+
+
 ## 3. Get SOL airdrop for devnet (Optional)
 
 * https://faucet.solana.com/
 * https://faucet.quicknode.com/solana/
 * https://solfaucet.com/
+
+
 
 ## 4. Download the latest version of the solxen-tx mining client (Go language version) 
 
@@ -133,6 +139,8 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 * macOS version (M1/M2/M3 CPU): solxen-tx-darwin-arm64.tar.gz
 * Linux version (Intel/AMD CPU): solxen-tx-linux-amd64.tar.gz
 * Linux version (ARM embedded CPU): solxen-tx-linux-arm64.tar.gz
+
+
 
 ## 5. Configuration file solxen-tx.yaml 
 
@@ -180,6 +188,8 @@ Sol:
 * After successful recharge, restart the program to officially start mining.
 
 * Check personal mining information on the solXEN mining leaderboard: https://sol-xen-app.infrafc.org/leaderboard
+
+
 
 ## 7. Other Reference Information 
 
