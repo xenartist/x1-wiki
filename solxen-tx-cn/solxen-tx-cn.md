@@ -188,14 +188,14 @@ Sol:
 * 在日志一开始，会显示使用的钱包地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值）；请确保充值的钱包地址是正确的；
 * 停掉程序，充值SOL到挖矿钱包地址；
 * 充值成功后，再次启动程序，正式开始挖矿；
-* 在solXEN挖矿排行榜查看个人挖矿信息：https://sol-xen-app.infrafc.org/leaderboard
+* 在solXEN挖矿排行榜查看个人挖矿信息：https://solxen.io/leaderboard
 
 
 
 ## 7. 其他参考信息
 
 * solXEN挖矿白皮书：https://docs.solxen.io/
-* solXEN挖矿排行榜：https://sol-xen-app.infrafc.org/leaderboard [备用: https://leaderboard.solxen.io/]
+* solXEN挖矿排行榜：https://solxen.io/leaderboard
 * solXEN挖矿英文电报：https://t.me/+Z5kEez70pyQ5NTAz
 * solXEN挖矿中文电报：https://t.me/XENChatCn
 * X1/XEN生态百科全书：https://x1.wiki

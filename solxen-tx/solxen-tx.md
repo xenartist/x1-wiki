@@ -187,13 +187,13 @@ Sol:
 
 * After successful recharge, restart the program to officially start mining.
 
-* Check personal mining information on the solXEN mining leaderboard: https://sol-xen-app.infrafc.org/leaderboard
+* Check personal mining information on the solXEN mining leaderboard: https://solxen.io/leaderboard
 
 
 
 ## 7. Other Reference Information 
 
 * solXEN Mining Whitepaper: https://docs.solxen.io/
-* solXEN Mining Leaderboard: https://sol-xen-app.infrafc.org/leaderboard [backup: https://leaderboard.solxen.io/]
+* solXEN Mining Leaderboard: https://solxen.io/leaderboard
 * solXEN Mining English Telegram: https://t.me/+Z5kEez70pyQ5NTAz
 * X1/XEN ecosystem wikipedia: [https://x1.wiki](https://x1.wiki/)
