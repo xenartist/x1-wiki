@@ -249,7 +249,7 @@ and
 ./target/release/solana validators
 ```
 
-## **12. Kill Validator Process
+## **12. Kill Validator Process**
 
 Check validator process
 
