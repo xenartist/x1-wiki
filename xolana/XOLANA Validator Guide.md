@@ -103,31 +103,31 @@ solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
 * Create a new wallet
 
 ```
-solana-keygen new --no-passphrase
+./target/release/solana-keygen new --no-passphrase
 ```
 
 * Create identity.json
 
 ```
-solana-keygen new --no-passphrase -o identity.json
+./target/release/solana-keygen new --no-passphrase -o identity.json
 ```
 
 * Create vote.json
 
 ```
-solana-keygen new --no-passphrase -o vote.json
+./target/release/solana-keygen new --no-passphrase -o vote.json
 ```
 
 * Create withdrawer.json
 
 ```
-solana-keygen new --no-passphrase -o  withdrawer.json
+./target/release/solana-keygen new --no-passphrase -o  withdrawer.json
 ```
 
 * Create stake.json
 
 ```
-solana-keygen new --no-passphrase -o stake.json
+./target/release/solana-keygen new --no-passphrase -o stake.json
 ```
 
 ## **5. Airdrop testing SOL**
