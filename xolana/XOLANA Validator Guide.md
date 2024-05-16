@@ -141,7 +141,7 @@ solana-keygen new --no-passphrase -o stake.json
 * Airdrop SOL
 
 ```
-./target/release/solana airdrop 50100
+./target/release/solana airdrop 50200
 ```
 
 ## **6. Run Validator**
