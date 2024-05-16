@@ -249,3 +249,22 @@ and
 ./target/release/solana validators
 ```
 
+## **12. Kill Validator Process
+
+Check validator process
+
+```
+ps aux | grep solana-validator
+```
+
+Kill validator process
+
+```
+pkill -f solana-validator
+```
+
+Check validator process again, make sure it has been killed properly
+
+```
+ps aux | grep solana-validator
+```
