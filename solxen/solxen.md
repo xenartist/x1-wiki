@@ -242,8 +242,32 @@ export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if nec
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 3
 ```
 
-* Check system level token amount
+## 9. Check minted Token Balance
 
+* Miner 0:
 ```
+solana config set --keypair ~/.config/solana/id0.json
+
+spl-token accounts
+```
+
+* Miner 1:
+```
+solana config set --keypair ~/.config/solana/id1.json
+
+spl-token accounts
+```
+
+* Miner 2:
+```
+solana config set --keypair ~/.config/solana/id2.json
+
+spl-token accounts
+```
+
+* Miner 3:
+```
+solana config set --keypair ~/.config/solana/id3.json
+
 spl-token accounts
 ```
