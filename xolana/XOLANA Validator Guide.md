@@ -204,7 +204,7 @@ Check ledger status
 
 ## **10. Stake**
 
-Transfer 50,000 SOL to public address of stake.
+Transfer some SOL (eg. 50000) to public address of stake.
 
 ```
 ./target/release/solana transfer <STAKE_PUBKEY> 50000
