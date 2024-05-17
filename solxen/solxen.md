@@ -178,7 +178,7 @@ PROGRAM_ID_MINTER=3JSyo6R489DcXedDYQUY7XbGXsmCz4mQH7sWeK5VE8vA
 DEBUG=*
 ```
 
-## Run 4 miners one by one (Mining hash/superhash/point)
+## 7. Run 4 miners one by one (Mining hash/superhash/point)
 
 * Open a new terminal or session. Miner 0:
 
@@ -212,7 +212,7 @@ export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if nec
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 3; sleep 10; done
 ```
 
-## Mint Token
+## 8. Mint Token
 
 * Miner 0:
 ```
