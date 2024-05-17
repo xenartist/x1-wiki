@@ -170,12 +170,12 @@ PROGRAM_ID_MINTER=3JSyo6R489DcXedDYQUY7XbGXsmCz4mQH7sWeK5VE8vA
 DEBUG=*
 ```
 
-## Run 4 miners one by one
+## Run 4 miners one by one (Mining hash/superhash/point)
 
 * Open a new terminal or session. Miner 0:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id0.json
+export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 0; sleep 10; done
 ```
@@ -183,7 +183,7 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 * Open a new terminal or session. Miner 1:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id1.json
+export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 1; sleep 10; done
 ```
@@ -191,7 +191,7 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 * Open a new terminal or session. Miner 2:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id2.json
+export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 2; sleep 10; done
 ```
@@ -199,7 +199,7 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 * Open a new terminal or session. Miner 3:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id3.json
+export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 3; sleep 10; done
 ```
@@ -208,21 +208,29 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 
 * Miner 0:
 ```
+export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
+
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 0
 ```
 
 * Miner 1:
 ```
+export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
+
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 1
 ```
 
 * Miner 2:
 ```
+export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
+
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 2
 ```
 
 * Miner 3:
 ```
+export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
+
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 3
 ```
 
