@@ -120,7 +120,7 @@ solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id3.json
 * Config 
 
 ```
-./target/release/solana config set -u http://69.10.34.226:8899
+solana config set -u http://69.10.34.226:8899
 ```
 
 * Do airdrop
