@@ -191,7 +191,7 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 * Open a new terminal or session. Miner 2:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id1.json
+export USER_WALLET=/home/ubuntu/.config/solana/id2.json
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 2; sleep 10; done
 ```
@@ -199,7 +199,7 @@ while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E3
 * Open a new terminal or session. Miner 3:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id1.json
+export USER_WALLET=/home/ubuntu/.config/solana/id3.json
 
 while true; do cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 3; sleep 10; done
 ```
