@@ -117,6 +117,14 @@ solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id3.json
 
 ## 3. Get SOL airdrop for 4 wallets
 
+* Config 
+
+```
+./target/release/solana config set -u http://69.10.34.226:8899
+```
+
+* Do airdrop
+
 ```
 solana airdrop 100 <PUBKEY_OF_ID0>
 ```
