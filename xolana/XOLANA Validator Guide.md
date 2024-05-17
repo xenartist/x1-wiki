@@ -78,7 +78,7 @@ $ sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang c
 
 ```bash
 $ git clone https://github.com/jacklevin74/xolana.git
-$ cd solana
+$ cd xolana
 $ git checkout v1.18.12
 ```
 
@@ -141,7 +141,7 @@ solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
 * Airdrop SOL
 
 ```
-./target/release/solana airdrop 50200
+./target/release/solana airdrop 100
 ```
 
 ## **6. Run Validator**
