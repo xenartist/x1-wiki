@@ -56,32 +56,8 @@ Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
 ### Windows
 
-### 1.2 Download solana wallet
+**Please use WSL (Windows Subsystem for Linux) on Windows 10 & 11 to execute all the Linux based instructions provided.**
 
-* Open a Command Prompt (`cmd.exe`) as an Administrator
-* Search for Command Prompt in the Windows search bar. When the Command Prompt app appears, right-click and select “Open as Administrator”. If you are prompted by a pop-up window asking “Do you want to allow this app to make changes to your device?”, click Yes.
-* Copy and paste the following command, then press Enter to download the Solana installer into a temporary directory:
-
-  ```
-  cmd /c "curl https://release.solana.com/v1.18.12/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\solana-install-tmp\solana-install-init.exe --create-dirs"
-  ```
-
-* Copy and paste the following command, then press Enter to install the latest version of Solana. If you see a security pop-up by your system, please select to allow the program to run.
-
-  ```
-  C:\solana-install-tmp\solana-install-init.exe v1.18.12
-  ```
-
-* When the installer is finished, press Enter.
-* Close the command prompt window and re-open a new command prompt window as a normal user
-* Search for "Command Prompt" in the search bar, then left click on the Command Prompt app icon, no need to run as Administrator)
-* Confirm you have the desired version of `solana` installed by entering:
-
-  ```
-  solana --version
-  ```
-
-* After a successful install, `solana-install update` may be used to easily update the Solana software to a newer version at any time.
 
 ## 2. Create 4 new wallets
 
@@ -141,15 +117,23 @@ solana airdrop 100 <PUBKEY_OF_ID3>
 
 ## 4. Install rustc, cargo.
 
+* Install build-essential:
+
 ```bash
-$ curl https://sh.rustup.rs -sSf | sh
-$ source $HOME/.cargo/env
+sudo apt install build-essential
 ```
 
-Using the latest stable rust version by running:
+* Install rust and cargo:
 
 ```bash
-$ rustup update
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+```
+
+* Using the latest stable rust version by running:
+
+```bash
+rustup update
 ```
 
 ## 5. Get solXEN Miner code 
