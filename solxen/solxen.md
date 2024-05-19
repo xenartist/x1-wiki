@@ -164,17 +164,18 @@ git checkout epsilon
 
 ## 6. Config .env file
 
-Copy .env.example to .env
+### 6.1 Copy example .env file
+
+* Copy .env.example to .env
 
 ```
 cp .env.example .env
 ```
 
 
-### 6.1 For XOLANA devnet
+### 6.2.1 For XOLANA devnet
 
-
-Config it as following:
+* Config it as following:
 
 ```
 USER_WALLET=/home/ubuntu/.config/solana/id0.json
@@ -184,7 +185,9 @@ PROGRAM_ID_MINTER=2nHCigQaERP2gUJVqeMXz1D6xrCr6RYLY8UptQUNGbHg
 DEBUG=*
 ```
 
+### 6.2.1 For XOLANA devnet
 
+**TODO**
 
 
 
