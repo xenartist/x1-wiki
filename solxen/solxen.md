@@ -193,14 +193,14 @@ DEBUG=*
 
 ## 7. Run 4 miners one by one (Mining hash/superhash/point)
 
-*Please remember to replace the example address of <0x970Ce544847B0E314eA357e609A0C0cA4D9fD823> to your ETH format address for further receiving XN airdrop purposes.*
+**Please remember to replace the <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
 
 * Open a new terminal or session. Miner 0:
 
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 0 --fee 1 --delay 1 --units 1150000 --runs 65535
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 0 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 1:
@@ -208,7 +208,7 @@ cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 1 --fee 1 --delay 1 --units 1150000 --runs 65535
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 1 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 2:
@@ -216,7 +216,7 @@ cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 2 --fee 1 --delay 1 --units 1150000 --runs 65535
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 2 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 3:
@@ -224,7 +224,7 @@ cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 3 --fee 1 --delay 1 --units 1150000 --runs 65535
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 3 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 
@@ -233,34 +233,34 @@ cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0
 
 ## 8. Mint Token
 
-*Please remember to replace the example address of <0x970Ce544847B0E314eA357e609A0C0cA4D9fD823> to your ETH format address for further receiving XN airdrop purposes.*
+**Please remember to replace the example <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
 
 * Miner 0:
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 0
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 0
 ```
 
 * Miner 1:
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 1
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 1
 ```
 
 * Miner 2:
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 2
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 2
 ```
 
 * Miner 3:
 ```
 export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
 
-cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 3
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 3
 ```
 
 
