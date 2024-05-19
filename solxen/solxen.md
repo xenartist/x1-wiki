@@ -8,8 +8,6 @@ Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
 ### Mac & Linux
 
-### 1.1 Download solana wallet
-
 * Open your favorite Terminal application
 * Install the Solana release [v1.18.12](https://github.com/solana-labs/solana/releases/tag/v1.18.12) on your machine by running:
 
@@ -59,6 +57,10 @@ Document maintained by [xen_artist](https://twitter.com/xen_artist)
 **Please use WSL (Windows Subsystem for Linux) on Windows 10 & 11 to execute all the Linux based instructions provided.**
 
 
+
+
+
+
 ## 2. Create 4 new wallets
 
 * Using command solana-keygen to generate a new wallet (**Note**: please add **--derivation-path** and **--no-passphrase** as the parameter).
@@ -91,6 +93,10 @@ solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id2.json
 solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id3.json
 ```
 
+
+
+
+
 ## 3. Get SOL airdrop for 4 wallets
 
 * Config 
@@ -115,11 +121,15 @@ solana airdrop 100 <PUBKEY_OF_ID3>
 ```
 
 
+
+
+
 ## 4. Install rustc, cargo.
 
 * Install build-essential:
 
 ```bash
+sudo apt update
 sudo apt install build-essential
 ```
 
@@ -136,6 +146,10 @@ source $HOME/.cargo/env
 rustup update
 ```
 
+
+
+
+
 ## 5. Get solXEN Miner code 
 
 ```
@@ -144,6 +158,10 @@ cd sol-xen
 git checkout epsilon
 ```
 
+
+
+
+
 ## 6. Config .env file
 
 Copy .env.example to .env
@@ -151,6 +169,10 @@ Copy .env.example to .env
 ```
 cp .env.example .env
 ```
+
+
+### 6.1 For XOLANA devnet
+
 
 Config it as following:
 
@@ -162,7 +184,13 @@ PROGRAM_ID_MINTER=2nHCigQaERP2gUJVqeMXz1D6xrCr6RYLY8UptQUNGbHg
 DEBUG=*
 ```
 
+
+
+
+
 ## 7. Run 4 miners one by one (Mining hash/superhash/point)
+
+*Please remember to replace the example address of <0x970Ce544847B0E314eA357e609A0C0cA4D9fD823> to your ETH format address for further receiving XN airdrop purposes.*
 
 * Open a new terminal or session. Miner 0:
 
@@ -196,7 +224,13 @@ export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if nec
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mine --kind 3 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
+
+
+
+
 ## 8. Mint Token
+
+*Please remember to replace the example address of <0x970Ce544847B0E314eA357e609A0C0cA4D9fD823> to your ETH format address for further receiving XN airdrop purposes.*
 
 * Miner 0:
 ```
@@ -225,6 +259,10 @@ export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if nec
 
 cargo run --package sol-xen-client -- --address 0x970Ce544847B0E314eA357e609A0C0cA4D9fD823 --command mint --kind 3
 ```
+
+
+
+
 
 ## 9. Check minted Token Balance
 
