@@ -1,4 +1,4 @@
-# solXEN Mining User Guide (Rust)
+# solXEN Mining User Guide (Rust) 2024.05.20
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
