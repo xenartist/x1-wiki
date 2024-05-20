@@ -185,7 +185,7 @@ PROGRAM_ID_MINTER=8HTvrqZT1JP279DMLT5SfNfGHxUeznem4Bh7zy92sWWx
 DEBUG=*
 ```
 
-### 6.2.1 For XOLANA devnet
+### 6.2.1 For SOLANA mainnet-beta
 
 **TODO**
 
