@@ -150,6 +150,8 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 ## 5. 配置文件 solxen-tx.yaml
 
 * 解压下载后的压缩包后，会看到2个文件，一个是solxen-tx的二进制可执行文件，另外一个是 solxen-tx.yaml配置文件；
+
+
 * 开发网（devnet）配置文件详细说明：
 
 ```
@@ -157,9 +159,24 @@ leaf jealous olympic later mistake slim oven depth under near very frown
   Sol:
   Url: "https://api.devnet.solana.com"                          # rpc地址(可替换)
   Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
-  Num: 1                                                        # 并发数(也即并发钱包数量)
+  Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
-  ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"          # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
+  ToAddr: "<ETH格式_地址>"                                        # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
+  ProgramID: "开发网上的合约地址"                                  # solxen合约地址
+  Time: 1000                                                    # 间隔时间(单位毫秒)
+  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
+```
+
+* xolana网（xolana）配置文件详细说明：
+
+```
+  Name: solxen-tx
+  Sol:
+  Url: "http://xx.xx.xx.xx:8899"                          # rpc地址(可替换)
+  Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
+  Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
+  Fee: 3000                                                     # 优先级费用(单位为microLamports)
+  ToAddr: "<ETH格式_地址>"                                        # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
   ProgramID: "开发网上的合约地址"                                  # solxen合约地址
   Time: 1000                                                    # 间隔时间(单位毫秒)
   HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
@@ -172,9 +189,9 @@ Name: solxen-tx
 Sol:
   Url: "https://api.mainnet-beta.solana.com"                    # rpc地址(可替换)
   Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
-  Num: 1                                                        # 并发数(也即并发钱包数量)
+  Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
-  ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"          # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
+  ToAddr: "<ETH格式_地址>"          							  # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
   ProgramID: "主网上的合约地址"                                    # solxen合约地址
   Time: 1000                                                    # 间隔时间(单位毫秒)
   HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
@@ -185,7 +202,7 @@ Sol:
 ## 6. solXEN挖矿
 
 * 配置文件设置好后，运行二进制可执行文件solxen-tx，启动程序，挖矿初始化；
-* 在日志一开始，会显示使用的钱包地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值）；请确保充值的钱包地址是正确的；
+* 在日志一开始，会显示使用的钱包地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值，建议4）；请确保充值的钱包地址是正确的；
 * 停掉程序，充值SOL到挖矿钱包地址；
 * 充值成功后，再次启动程序，正式开始挖矿；
 * 在solXEN挖矿排行榜查看个人挖矿信息：https://solxen.io/leaderboard

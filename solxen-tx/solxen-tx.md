@@ -153,9 +153,24 @@ Name: solxen-tx
 Sol: 
     Url: "https://api.devnet.solana.com"                     # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
-    Num: 1                                                   # Concurrency (number of concurrent wallets) 
+    Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
-    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ProgramID: "Contract address on the development network" # solxen contract address 
+    Time: 1000                                               # Interval time (in milliseconds) 
+    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
+```
+
+* Detailed explanation of the xolana network (xolana) configuration file:
+
+```   
+Name: solxen-tx 
+Sol: 
+    Url: "http://xx.xx.xx.xx:8899"                     # RPC address (replaceable) 
+    Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
+    Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
+    Fee: 3000                                                # Priority fee (in microLamports) 
+    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
     ProgramID: "Contract address on the development network" # solxen contract address 
     Time: 1000                                               # Interval time (in milliseconds) 
     HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
@@ -168,9 +183,9 @@ Name: solxen-tx
 Sol: 
     Url: "https://api.mainnet-beta.solana.com"               # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
-    Num: 1                                                   # Concurrency (number of concurrent wallets) 
+    Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
-    ToAddr: "0xrjo23jro342r3ur90ewi0vjq3jr3o4i3por3k4r3"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
     ProgramID: "Contract address on the main network"        # solxen contract address 
     Time: 1000                                               # Interval time (in milliseconds) 
     HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default)
@@ -181,7 +196,7 @@ Sol:
 ## 6. solXEN Mining 
 * After setting up the configuration file, run the solxen-tx binary executable file to start the program and initialize mining.
 
-* At the beginning of the log, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1). Verify the wallet address is the correct one as expected.
+* At the beginning of the log, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1, recommend 4). Verify the wallet address is the correct one as expected.
 
 * Stop the program, recharge SOL to the mining wallet address.
 
