@@ -1,10 +1,53 @@
 # XOLANA Validator Guide
 
-# Prerequisites
+# Install The Solana CLI (Linux)
 
-* System Tuning
 
-Linux
+* Open your favorite Terminal application
+* Install the Solana release [v1.18.12](https://github.com/solana-labs/solana/releases/tag/v1.18.12) on your machine by running:
+
+  ```
+  sh -c "$(curl -sSfL https://release.solana.com/v1.18.12/install)"
+  ```
+
+* The following output indicates a successful update:
+
+  ```
+  downloading v1.18.12 installer
+  Configuration: /home/solana/.config/solana/install/config.yml
+  Active release directory: /home/solana/.local/share/solana/install/active_release
+  * Release version: v1.18.12
+  * Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.12/solana-release-x86_64-unknown-linux-gnu.tar.bz2
+  Update successful
+  ```
+
+* Depending on your system, the end of the installer messaging may prompt you to
+
+  ```
+  Please update your PATH environment variable to include the solana programs:
+  ```
+
+* If you get the above message, copy and paste the recommended command below it to update `PATH` 
+
+  You can do this by adding the following line to your $HOME/.profile or /etc/profile (for a system-wide installation):
+
+  ```
+  export PATH="/home/ubuntu/.local/share/solana/install/active_release/bin:$PATH"
+  ```
+
+**Note:** Changes made to a profile file may not apply until the next time you log into your computer. To apply the changes immediately, just run the shell commands directly or execute them from the profile using a command such as `source $HOME/.profile`.
+
+* Confirm you have the desired version of `solana` installed by running:
+
+  ```
+  solana --version
+  ```
+
+* After a successful install, `solana-install update` may be used to easily update the Solana software to a newer version at any time.
+
+
+
+# System Tuning (Linux)
 
 Your system will need to be tuned in order to run properly. Your validator may not start without the settings below.
 
@@ -24,6 +67,10 @@ vm.max_map_count = 1000000
 # Increase number of allowed open file descriptors
 fs.nr_open = 1000000
 EOF"
+```
+
+```
+sudo sysctl -p /etc/sysctl.d/21-solana-validator.conf
 ```
 
 * Increase systemd and session file limits
@@ -55,37 +102,37 @@ EOF"
 ## **1. Install rustc, cargo and rustfmt.**
 
 ```bash
-$ curl https://sh.rustup.rs -sSf | sh
-$ source $HOME/.cargo/env
-$ rustup component add rustfmt
+curl https://sh.rustup.rs -sSf | sh
+source $HOME/.cargo/env
+rustup component add rustfmt
 ```
 
 When building the master branch, please make sure you are using the latest stable rust version by running:
 
 ```bash
-$ rustup update
+rustup update
 ```
 
 On Linux systems you may need to install libssl-dev, pkg-config, zlib1g-dev, protobuf etc.
 
 On Ubuntu:
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler
+sudo apt-get update
+sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler
 ```
 
 ## **2. Download the source code.**
 
 ```bash
-$ git clone https://github.com/jacklevin74/xolana.git
-$ cd xolana
-$ git checkout v1.18.12
+git clone https://github.com/jacklevin74/xolana.git
+cd xolana
+git checkout v1.18.12
 ```
 
 ## **3. Build.**
 
 ```bash
-$ ./cargo build --release
+./cargo build --release
 ```
 
 * Check version
@@ -103,31 +150,31 @@ solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
 * Create a new wallet
 
 ```
-./target/release/solana-keygen new --no-passphrase
+solana-keygen new --no-passphrase
 ```
 
 * Create identity.json
 
 ```
-./target/release/solana-keygen new --no-passphrase -o identity.json
+solana-keygen new --no-passphrase -o identity.json
 ```
 
 * Create vote.json
 
 ```
-./target/release/solana-keygen new --no-passphrase -o vote.json
+solana-keygen new --no-passphrase -o vote.json
 ```
 
 * Create withdrawer.json
 
 ```
-./target/release/solana-keygen new --no-passphrase -o  withdrawer.json
+solana-keygen new --no-passphrase -o  withdrawer.json
 ```
 
 * Create stake.json
 
 ```
-./target/release/solana-keygen new --no-passphrase -o stake.json
+solana-keygen new --no-passphrase -o stake.json
 ```
 
 ## **5. Airdrop testing SOL**
@@ -135,13 +182,13 @@ solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
 * Config 
 
 ```
-./target/release/solana config set -u http://69.10.34.226:8899
+solana config set -u http://69.10.34.226:8899
 ```
 
 * Airdrop SOL
 
 ```
-./target/release/solana airdrop 100
+solana airdrop 100
 ```
 
 ## **6. Run Validator**
@@ -158,7 +205,7 @@ tail -f log.txt
 Check catch up status
 
 ```
-./target/release/solana catchup --our-localhost
+solana catchup --our-localhost
 ```
 
 Should be shown info like this:
@@ -170,12 +217,12 @@ Should be shown info like this:
 Check validator status
 
 ```
-./target/release/solana gossip
+solana gossip
 ```
 and 
 
 ```
-./target/release/solana validators
+solana validators
 ```
 
 Check ledger status
@@ -187,19 +234,19 @@ Check ledger status
 ## **7. Transfer 100 SOL to identity account**
 
 ```
-./target/release/solana transfer <IDENTITY_PUBKEY> 100
+solana transfer <IDENTITY_PUBKEY> 100
 ```
 
 ## **8. Create Stake Account**
 
 ```
-./target/release/solana create-stake-account stake.json 10
+solana create-stake-account stake.json 10
 ```
 
 ## **9. Create Vote Account**
 
 ```
-./target/release/solana create-vote-account vote.json identity.json  <WITHDRAWER_PUBKEY> --commission 10
+solana create-vote-account vote.json identity.json  <WITHDRAWER_PUBKEY> --commission 10
 ```
 
 ## **10. Stake**
@@ -207,19 +254,19 @@ Check ledger status
 Transfer some SOL (eg. 50000) to public address of stake.
 
 ```
-./target/release/solana transfer <STAKE_PUBKEY> 50000
+solana transfer <STAKE_PUBKEY> 50000
 ```
 
 Do delegate stake operation.
 
 ```
-./target/release/solana delegate-stake stake.json vote.json
+solana delegate-stake stake.json vote.json
 ```
 
 Do stake operation.
 
 ```
-./target/release/solana stake-account stake.json
+solana stake-account stake.json
 ```
 
 ## **11. Check status**
@@ -231,7 +278,7 @@ tail -f log.txt
 
 Check leader schedule
 ```
-./target/release/solana leader-schedule | grep <IDENTITY_PUBKEY>
+solana leader-schedule | grep <IDENTITY_PUBKEY>
 ```
 or 
 ```
@@ -241,12 +288,12 @@ tail -f log.txt | grep -i "My next leader slot"
 Check validator status
 
 ```
-./target/release/solana gossip
+solana gossip
 ```
 and 
 
 ```
-./target/release/solana validators
+solana validators
 ```
 
 ## **12. Kill Validator Process**
