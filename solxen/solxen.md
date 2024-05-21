@@ -178,9 +178,8 @@ cp .env.example .env
 * Config it as following:
 
 ```
-USER_WALLET=/home/ubuntu/.config/solana/id0.json
+USER_WALLET_PATH=/home/ubuntu/.config/solana/
 ANCHOR_PROVIDER_URL=http://69.10.34.226:8899
-PROGRAM_ID=Dx7zjkWZbUStmhjo8BrhbprtQCcMByJgCTEC6TLgkH8n
 PROGRAM_ID_MINTER=8HTvrqZT1JP279DMLT5SfNfGHxUeznem4Bh7zy92sWWx
 DEBUG=*
 ```
@@ -198,32 +197,24 @@ DEBUG=*
 * Open a new terminal or session. Miner 0:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
-
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 0 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 1:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
-
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 1 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 2:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
-
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 2 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 3:
 
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
-
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 3 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
