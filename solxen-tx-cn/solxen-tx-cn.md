@@ -1,4 +1,4 @@
-# solXEN挖矿中文简明教程 (Go) 2024.05.12
+# solXEN挖矿中文简明教程 (Go) 2024.05.22
 
 文档维护 by [xen_artist](https://twitter.com/xen_artist)
 
@@ -93,23 +93,10 @@ solana --version
 
 ## 2. 创建新钱包
 
-* 使用命令 `solana-keygen` 生成新钱包（**注意**：请将 **--derivation-path** 添加为参数）。
+* 使用命令 `solana-keygen` 生成新钱包（**注意**：请将 **--derivation-path** 务必添加为参数）。
 
 ```
-solana-keygen new --derivation-path
-```
-
-* 将提示以下信息，请按 ENTER 继续。
-
-```
-Generating a new keypair
-
-For added security, enter a BIP39 passphrase
-
-NOTE! This passphrase improves security of the recovery seed phrase NOT the
-keypair file itself, which is stored as insecure plain text
-
-BIP39 Passphrase (empty for none):  
+solana-keygen new --derivation-path --no-passphrase
 ```
 
 * 然后将生成一个 12 个单词的种子短语（又称为助记词或恢复短语）（例如 *leaf jealous olympic later mistake slim oven depth under near very frown*），请将其保存在**安全**的地方，因为它将被用在 `solxen-tx.yaml` 的 **Mnemonic** 配置字段上。
@@ -128,15 +115,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 
 
-## 3. 获取 DEVNET 的 SOL 空投（可选）
-
-* https://faucet.solana.com/
-* https://faucet.quicknode.com/solana/
-* https://solfaucet.com/
-
-
-
-## 4. 下载最新版本的solxen-tx挖矿客户端（go语言版本）
+## 3. 下载最新版本的solxen-tx挖矿客户端（go语言版本）
 
 * 下载地址：https://github.com/mmc-98/solxen-tx/releases
 * Windows版本：solxen-tx-windows-amd64.zip
@@ -147,39 +126,24 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 
 
-## 5. 配置文件 solxen-tx.yaml
+## 4. 配置文件 solxen-tx.yaml
 
 * 解压下载后的压缩包后，会看到2个文件，一个是solxen-tx的二进制可执行文件，另外一个是 solxen-tx.yaml配置文件；
-
-
-* 开发网（devnet）配置文件详细说明：
-
-```
-  Name: solxen-tx
-  Sol:
-  Url: "https://api.devnet.solana.com"                          # rpc地址(可替换)
-  Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
-  Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
-  Fee: 3000                                                     # 优先级费用(单位为microLamports)
-  ToAddr: "<ETH格式_地址>"                                        # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
-  ProgramID: "开发网上的合约地址"                                  # solxen合约地址
-  Time: 1000                                                    # 间隔时间(单位毫秒)
-  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
-```
 
 * xolana网（xolana）配置文件详细说明：
 
 ```
-  Name: solxen-tx
-  Sol:
+Name: solxen-tx
+Sol:
+  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
   Url: "http://xx.xx.xx.xx:8899"                          # rpc地址(可替换)
   Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
   Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
-  ToAddr: "<ETH格式_地址>"                                        # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
+  ToAddr: "<ETH格式_地址>"                                        # 接收xn空投的eth格式地址(区分大小写；请替换为自己的钱包地址)
   ProgramID: "开发网上的合约地址"                                  # solxen合约地址
   Time: 1000                                                    # 间隔时间(单位毫秒)
-  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
+  
 ```
 
 * 主网（mainnet）配置文件详细说明：
@@ -187,29 +151,62 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 ```
 Name: solxen-tx
 Sol:
+  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
   Url: "https://api.mainnet-beta.solana.com"                    # rpc地址(可替换)
   Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
   Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
-  ToAddr: "<ETH格式_地址>"          							  # 接收xn空投的eth格式的地址(请替换为自己的钱包地址)
+  ToAddr: "<ETH格式_地址>"          							  # 接收xn空投的eth格式地址(区分大小写；请替换为自己的钱包地址)
   ProgramID: "主网上的合约地址"                                    # solxen合约地址
   Time: 1000                                                    # 间隔时间(单位毫秒)
-  HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
+  
 ```
 
 
 
-## 6. solXEN挖矿
+## 5. 查看挖矿钱包信息
 
-* 配置文件设置好后，运行二进制可执行文件solxen-tx，启动程序，挖矿初始化；
+```
+./solxen-tx balance # TODO, not implemented yet
+```
+
+
+
+## 6. 领取XOLANA网的 SOL 空投（可选）
+
+```
+./solxen-tx airdrop
+```
+
+
+
+## 7. solXEN挖矿
+
+* 配置文件设置好后，运行二进制可执行文件solxen-tx，通过如下命令行启动程序，挖矿初始化：
+```
+./solxen-tx miner
+```
 * 在日志一开始，会显示使用的钱包地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值，建议4）；请确保充值的钱包地址是正确的；
-* 停掉程序，充值SOL到挖矿钱包地址；
-* 充值成功后，再次启动程序，正式开始挖矿；
+* 停掉程序，充值SOL到挖矿钱包地址:
+	* 如果是XOLANA网，则通过 **步骤6** 领取XOLANA网的测试SOL代币空投即可；
+	* 如果是mainnet-beta主网，则充值SOL到挖矿钱包地址 （1个或多个挖矿钱包地址）即可；
+* 充值成功后，再次启动程序，正式开始挖矿：
+```
+./solxen-tx miner
+```
 * 在solXEN挖矿排行榜查看个人挖矿信息：https://solxen.io/leaderboard
 
 
 
-## 7. 其他参考信息
+## 8. 用挖到的积分铸造solXEN代币
+
+```
+./solxen-tx minter
+```
+
+
+
+## 9. 其他参考信息
 
 * solXEN挖矿白皮书：https://docs.solxen.io/
 * solXEN挖矿排行榜：https://solxen.io/leaderboard
