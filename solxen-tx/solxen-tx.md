@@ -1,5 +1,5 @@
 
-# solXEN Mining User Guide (Go) 2024.05.12
+# solXEN Mining User Guide (Go) 2024.05.22
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
@@ -91,20 +91,7 @@ Document maintained by [xen_artist](https://twitter.com/xen_artist)
 * Using command solana-keygen to generate a new wallet (**Note**: please add **--derivation-path** as the parameter).
 
 ```
-solana-keygen new --derivation-path
-```
-
-* It will prompt following information, press ENTER to continue.
-
-```
-Generating a new keypair
-
-For added security, enter a BIP39 passphrase
-
-NOTE! This passphrase improves security of the recovery seed phrase NOT the
-keypair file itself, which is stored as insecure plain text
-
-BIP39 Passphrase (empty for none): 
+solana-keygen new --derivation-path --no-passphrase
 ```
 
 * Then it will generate a 12-word seed (aka. mnemonic, or recovery) phrase (eg. *leaf jealous olympic later mistake slim oven depth under near very frown*), save it at a **SAFE** place as it will be used as **Mnemonic** in solxen-tx.yaml.
@@ -123,15 +110,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 
 
-## 3. Get SOL airdrop for devnet (Optional)
-
-* https://faucet.solana.com/
-* https://faucet.quicknode.com/solana/
-* https://solfaucet.com/
-
-
-
-## 4. Download the latest version of the solxen-tx mining client (Go language version) 
+## 3. Download the latest version of the solxen-tx mining client (Go language version) 
 
 * Download link: https://github.com/mmc-98/solxen-tx/releases
 * Windows version: solxen-tx-windows-amd64.zip
@@ -142,38 +121,24 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 
 
 
-## 5. Configuration file solxen-tx.yaml 
+## 4. Configuration file solxen-tx.yaml 
 
 * After extracting the downloaded zip file, you will see two files: one is the solxen-tx binary executable file, and the other is the solxen-tx.yaml configuration file.
-
-* Detailed explanation of the development network (devnet) configuration file:
-
-```   
-Name: solxen-tx 
-Sol: 
-    Url: "https://api.devnet.solana.com"                     # RPC address (replaceable) 
-    Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
-    Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
-    Fee: 3000                                                # Priority fee (in microLamports) 
-    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
-    ProgramID: "Contract address on the development network" # solxen contract address 
-    Time: 1000                                               # Interval time (in milliseconds) 
-    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
-```
 
 * Detailed explanation of the xolana network (xolana) configuration file:
 
 ```   
 Name: solxen-tx 
 Sol: 
+    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
     Url: "http://xx.xx.xx.xx:8899"                     # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
     Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
-    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
+    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (uppercase & lowercase; replace with your own wallet address) 
     ProgramID: "Contract address on the development network" # solxen contract address 
     Time: 1000                                               # Interval time (in milliseconds) 
-    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
+    
 ```
 
 * Main network (mainnet) configuration file detailed explanation:
@@ -181,32 +146,68 @@ Sol:
 ```   
 Name: solxen-tx 
 Sol: 
+    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default)
     Url: "https://api.mainnet-beta.solana.com"               # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
     Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
-    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (replace with your own wallet address) 
-    ProgramID: "Contract address on the main network"        # solxen contract address 
+    ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (uppercase & lowercase; replace with your own wallet address) 
+    ProgramID: "Contract address on the mainnet-beta network" # solxen contract address 
     Time: 1000                                               # Interval time (in milliseconds) 
-    HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default)
+    
 ```
 
 
 
-## 6. solXEN Mining 
-* After setting up the configuration file, run the solxen-tx binary executable file to start the program and initialize mining.
+## 5. Check mining wallet balance
+
+```
+./solxen-tx balance # TODO, not implemented yet
+```
+
+
+
+## 6. Get SOL airdrop on XOLANA network (Optional)
+
+```
+./solxen-tx airdrop
+```
+
+
+
+## 7. solXEN Mining 
+
+* After setting up the configuration file, run the solxen-tx binary executable file to start the program and initialize mining:
+
+```
+./solxen-tx miner
+```
 
 * At the beginning of the log, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1, recommend 4). Verify the wallet address is the correct one as expected.
 
-* Stop the program, recharge SOL to the mining wallet address.
+* Stop the program, recharge SOL to the mining wallet address:
+	* If it is the XOLANA network, you can follow **Step 6** to receive the XOLANA network's test SOL token airdrop;
+	* If it is the mainnet-beta network, you can deposit SOL to the mining wallet address (one or more mining wallet addresses). 
 
 * After successful recharge, restart the program to officially start mining.
+
+```
+./solxen-tx miner
+```
 
 * Check personal mining information on the solXEN mining leaderboard: https://solxen.io/leaderboard
 
 
 
-## 7. Other Reference Information 
+## 8. Use mined point to mint solXEN token
+
+```
+./solxen-tx minter
+```
+
+
+
+## 9. Other Reference Information 
 
 * solXEN Mining Whitepaper: https://docs.solxen.io/
 * solXEN Mining Leaderboard: https://solxen.io/leaderboard
