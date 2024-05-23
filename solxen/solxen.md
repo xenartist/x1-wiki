@@ -1,4 +1,4 @@
-# solXEN Mining User Guide (Rust) 2024.05.20
+# solXEN Mining User Guide (Rust/Nodejs) 2024.05.22
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
@@ -122,9 +122,17 @@ solana airdrop 100 <PUBKEY_OF_ID3>
 
 
 
+## 4. Install Rust/Nodejs
 
 
-## 4. Install rustc, cargo.
+
+Just choose one way to run the mining client, Rust or Nodejs. 
+
+**No need to install both of them.**
+
+
+
+### 4.1 Install rustc, cargo (if you run rust mining client)
 
 * Install build-essential:
 
@@ -148,6 +156,61 @@ rustup update
 
 
 
+### 4.2 Install nodejs (if you run nodejs mining client)
+
+* Install build-essential:
+
+```bash
+sudo apt update
+sudo apt install build-essential
+```
+
+* Install nvm
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+or 
+```
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
+
+* Running either of the above commands downloads a script and runs it. The script clones the nvm repository to ~/.nvm, and attempts to add the source lines from the snippet below to the correct profile file (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
+
+```
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+* To verify that nvm has been installed, do:
+
+```
+command -v nvm
+```
+which should output nvm if the installation was successful. Please note that which nvm will not work, since nvm is a sourced shell function, not an executable binary.
+
+Note: On Linux, after running the install script, if you get nvm: command not found or see no feedback from your terminal after you type command -v nvm, simply close your current terminal, open a new terminal, and try verifying again.
+
+* Install nodejs v22.2.0
+
+```
+nvm install 22.2.0
+```
+
+* Check nodejs version
+
+```
+node -v
+```
+
+Output as following:
+
+```
+v22.2.0
+```
+
+
+
 
 
 ## 5. Get solXEN Miner code 
@@ -164,6 +227,8 @@ git checkout epsilon
 
 ## 6. Config .env file
 
+
+
 ### 6.1 Copy example .env file
 
 * Copy .env.example to .env
@@ -171,6 +236,7 @@ git checkout epsilon
 ```
 cp .env.example .env
 ```
+
 
 
 ### 6.2.1 For XOLANA devnet
@@ -184,13 +250,35 @@ PROGRAM_ID_MINTER=8HTvrqZT1JP279DMLT5SfNfGHxUeznem4Bh7zy92sWWx
 DEBUG=*
 ```
 
-### 6.2.1 For SOLANA mainnet-beta
+### 6.2.2 For SOLANA mainnet-beta
 
 **TODO**
 
 
 
-## 7. Run 4 miners one by one (Mining hash/superhash/point)
+## 7. Run miners 
+
+
+
+### 7.1 Nodejs miner - 4 in one-box
+
+**Please remember to replace the <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
+
+* Run mint command without auto mint
+
+```
+node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000
+```
+
+* Run mint command with auto mint enabled (Auto mint every N [default: 1000] slots )
+
+```
+node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000 --autoMint 1000
+```
+
+
+
+### 7.2 Rust miner - Run 4 miners one by one 
 
 **Please remember to replace the <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
 
@@ -223,6 +311,16 @@ cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --k
 
 
 ## 8. Mint Token
+
+
+
+### 8.1 Nodejs client Mint Token
+
+**TODO**
+
+
+
+### 8.2 Rust client Mint Token 
 
 **Please remember to replace the example <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
 
