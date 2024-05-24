@@ -274,13 +274,17 @@ node install
 * Run mint command without auto mint
 
 ```
-node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000
+# adjust the fee or delay if necessary
+
+node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000 
 ```
 
 * Run mint command with auto mint enabled (Auto mint every N [default: 1000] slots )
 
 ```
-node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000 --autoMint 1000
+# adjust the fee or delay if necessary
+
+node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --units 1150000 --autoMint 1000 
 ```
 
 
@@ -292,24 +296,32 @@ node ./client/multiminer.js mine --address <ETH ADDRESS> --fee 1 --delay 1 --uni
 * Open a new terminal or session. Miner 0:
 
 ```
-cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 0 --fee 1 --delay 1 --units 1150000 --runs 65535
+# adjust the fee or delay if necessary
+
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 0 --fee 1 --delay 1 --units 1150000 --runs 65535 
 ```
 
 * Open a new terminal or session. Miner 1:
 
 ```
+# adjust the fee or delay if necessary
+
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 1 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 2:
 
 ```
+# adjust the fee or delay if necessary
+
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 2 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
 * Open a new terminal or session. Miner 3:
 
 ```
+# adjust the fee or delay if necessary
+
 cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --kind 3 --fee 1 --delay 1 --units 1150000 --runs 65535
 ```
 
@@ -323,7 +335,50 @@ cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --k
 
 ### 8.1 Nodejs client Mint Token
 
-**TODO**
+
+* Miner 0:
+```
+# change the path if necessary
+
+export USER_WALLET=/home/ubuntu/.config/solana/id0.json 
+
+# adjust the fee if necessary
+
+node client/minter.js mint --kind 0 --fee 1 
+```
+
+* Miner 1:
+```
+# change the path if necessary
+
+export USER_WALLET=/home/ubuntu/.config/solana/id1.json 
+
+# adjust the fee if necessary
+
+node client/minter.js mint --kind 1 --fee 1 
+```
+
+* Miner 2:
+```
+# change the path if necessary
+
+export USER_WALLET=/home/ubuntu/.config/solana/id2.json 
+
+# adjust the fee if necessary
+
+node client/minter.js mint --kind 2 --fee 1 
+```
+
+* Miner 3:
+```
+# change the path if necessary
+
+export USER_WALLET=/home/ubuntu/.config/solana/id3.json 
+
+# adjust the fee if necessary
+
+node client/minter.js mint --kind 3 --fee 1 
+```
 
 
 
@@ -333,30 +388,46 @@ cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --k
 
 * Miner 0:
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id0.json # change the path if necessary
+# change the path if necessary
 
-cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 0
+export USER_WALLET=/home/ubuntu/.config/solana/id0.json 
+
+# adjust the fee if necessary
+
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 0 --fee 1 
 ```
 
 * Miner 1:
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id1.json # change the path if necessary
+# change the path if necessary
 
-cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 1
+export USER_WALLET=/home/ubuntu/.config/solana/id1.json 
+
+# adjust the fee if necessary
+
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 1 --fee 1 
 ```
 
 * Miner 2:
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id2.json # change the path if necessary
+# change the path if necessary
 
-cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 2
+export USER_WALLET=/home/ubuntu/.config/solana/id2.json 
+
+# adjust the fee if necessary
+
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 2 --fee 1 
 ```
 
 * Miner 3:
 ```
-export USER_WALLET=/home/ubuntu/.config/solana/id3.json # change the path if necessary
+# change the path if necessary
 
-cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 3
+export USER_WALLET=/home/ubuntu/.config/solana/id3.json 
+
+# adjust the fee if necessary
+
+cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mint --kind 3 --fee 1 
 ```
 
 
