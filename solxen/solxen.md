@@ -262,6 +262,13 @@ DEBUG=*
 
 ### 7.1 Nodejs miner - 4 in one-box
 
+* Install dependencies first
+
+```
+node install
+```
+
+
 **Please remember to replace the <ETH ADDRESS> to your ETH format address for further receiving XN airdrop purposes. (Self-Custody Crypto Wallet)**
 
 * Run mint command without auto mint
