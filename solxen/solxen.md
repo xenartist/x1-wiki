@@ -265,7 +265,7 @@ DEBUG=*
 * Install dependencies first
 
 ```
-node install
+npm install
 ```
 
 
