@@ -131,7 +131,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 Name: solxen-tx 
 Sol: 
     HdPAth: m/44'/501'/0'/0'                                 # Wallet address path (default) 
-    Url: "http://xx.xx.xx.xx:8899"                     # RPC address (replaceable) 
+    Url: "http://69.10.34.226:8899"                     # RPC address (replaceable) 
     Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # Mnemonic (replace with your own mnemonic) 
     Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
@@ -178,12 +178,6 @@ Do this before any mining operation, to get the mining wallet public addresses, 
 
 
 ## 7. solXEN Mining 
-
-* After setting up the configuration file, run the solxen-tx binary executable file to start the program and initialize mining:
-
-```
-./solxen-tx miner
-```
 
 * In **Step 5. Check mining wallet balance (MUST)**, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1, recommend 4). Verify the wallet addresses are the correct ones as expected.
 

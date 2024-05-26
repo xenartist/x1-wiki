@@ -252,7 +252,14 @@ DEBUG=*
 
 ### 6.2.2 For SOLANA mainnet-beta
 
-**TODO**
+* Config it as following:
+
+```
+USER_WALLET_PATH=/home/ubuntu/.config/solana/
+ANCHOR_PROVIDER_URL=https://api.mainnet-beta.solana.com
+PROGRAM_ID_MINTER=TODO
+DEBUG=*
+```
 
 
 

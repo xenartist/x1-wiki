@@ -136,7 +136,7 @@ leaf jealous olympic later mistake slim oven depth under near very frown
 Name: solxen-tx
 Sol:
   HdPAth: m/44'/501'/0'/0'                                      # 钱包地址路径(缺省即可)
-  Url: "http://xx.xx.xx.xx:8899"                          # rpc地址(可替换)
+  Url: "http://69.10.34.226:8899"                          # rpc地址(可替换)
   Mnemonic: "leaf jealous olympic later mistake slim oven depth under near very frown" # 助记词(请替换为自己的助记词)
   Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
@@ -166,13 +166,15 @@ Sol:
 
 ## 5. 查看挖矿钱包信息
 
+在开始挖矿之前，请通过如下命令查看挖矿钱包公共地址（1个或多个，取决于配置文件中Num的数值是1还是>1的数值，建议4），SOL余额信息等。
+
 ```
-./solxen-tx balance # TODO, not implemented yet
+./solxen-tx balance # 
 ```
 
 
 
-## 6. 领取XOLANA网的 SOL 空投（可选）
+## 6. 领取XOLANA开发网的SOL空投（可选）
 
 ```
 ./solxen-tx airdrop
@@ -182,15 +184,11 @@ Sol:
 
 ## 7. solXEN挖矿
 
-* 配置文件设置好后，运行二进制可执行文件solxen-tx，通过如下命令行启动程序，挖矿初始化：
-```
-./solxen-tx miner
-```
-* 在日志一开始，会显示使用的钱包地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值，建议4）；请确保充值的钱包地址是正确的；
+* 在 **步骤5. 查看挖矿钱包信息** 中会显示使用的挖矿钱包公共地址是哪一个，或者多个（取决于配置文件中Num的数值是1还是>1的数值，建议4）；请确保充值的钱包地址是正确的；
 * 停掉程序，充值SOL到挖矿钱包地址:
-	* 如果是XOLANA网，则通过 **步骤6** 领取XOLANA网的测试SOL代币空投即可；
+	* 如果是XOLANA开发网，则通过 ** 步骤6. 领取XOLANA开发网的SOL空投** 即可；
 	* 如果是mainnet-beta主网，则充值SOL到挖矿钱包地址 （1个或多个挖矿钱包地址）即可；
-* 充值成功后，再次启动程序，正式开始挖矿：
+* 充值成功后，启动程序，正式开始挖矿：
 ```
 ./solxen-tx miner
 ```
