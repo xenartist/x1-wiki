@@ -96,8 +96,11 @@ solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id3.json
 
 
 
+## 3. Recharge mining wallet
 
-## 3. Get SOL airdrop for 4 wallets
+### 3.1 Get SOL airdrop for 4 wallets (XOLANA devnet ONLY)
+
+**If you plan to run the sol-xen mining program on the Xolana development network:**
 
 * Config 
 
@@ -119,6 +122,14 @@ solana airdrop 100 <PUBKEY_OF_ID2>
 ```
 solana airdrop 100 <PUBKEY_OF_ID3>
 ```
+
+
+
+### 3.2 Transfer SOL to mining wallets (Solana mainnet-beta ONLY)
+
+**If you plan to run the sol-xen mining program on the Solana mainnet-beta network:**
+
+* Please transfer SOL to the mining wallets, such as <PUBKEY_OF_ID0>, <PUBKEY_OF_ID1>, <PUBKEY_OF_ID2>, <PUBKEY_OF_ID3>.
 
 
 
@@ -267,7 +278,7 @@ DEBUG=*
 
 
 
-### 7.1 Nodejs miner - 4 in one-box
+### 7.1 Nodejs miner - 4-in-1 box
 
 * Install dependencies first
 
@@ -336,7 +347,7 @@ cargo run --package sol-xen-client -- --address <ETH ADDRESS> --command mine --k
 
 
 
-## 8. Mint Token
+## 8. Mint Token (solXEN)
 
 
 
