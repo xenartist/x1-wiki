@@ -159,10 +159,12 @@ Sol:
 
 
 
-## 5. Check mining wallet balance
+## 5. Check mining wallet balance (MUST)
+
+Do this before any mining operation, to get the mining wallet public addresses, SOL balance, etc.
 
 ```
-./solxen-tx balance # TODO, not implemented yet
+./solxen-tx balance
 ```
 
 
@@ -183,11 +185,11 @@ Sol:
 ./solxen-tx miner
 ```
 
-* At the beginning of the log, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1, recommend 4). Verify the wallet address is the correct one as expected.
+* In **Step 5. Check mining wallet balance (MUST)**, the wallet address being used will be displayed, either one or more (depending on whether the Num value in the configuration file is 1 or >1, recommend 4). Verify the wallet addresses are the correct ones as expected.
 
 * Stop the program, recharge SOL to the mining wallet address:
-	* If it is the XOLANA network, you can follow **Step 6** to receive the XOLANA network's test SOL token airdrop;
-	* If it is the mainnet-beta network, you can deposit SOL to the mining wallet address (one or more mining wallet addresses). 
+	* If it is the **XOLANA devnet** network, you can follow **Step 6** to receive the XOLANA network's test SOL token airdrop;
+	* If it is the **mainnet-beta** network, you can deposit SOL to the mining wallet address (one or more mining wallet addresses). 
 
 * After successful recharge, restart the program to officially start mining.
 
