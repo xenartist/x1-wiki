@@ -108,6 +108,18 @@ solana-keygen new --derivation-path --no-passphrase -o ~/.config/solana/id3.json
 solana config set -u http://69.10.34.226:8899
 ```
 
+* Check Public Address of mining wallets
+
+```
+solana address -k ~/.config/solana/id0.json
+
+solana address -k ~/.config/solana/id2.json
+
+solana address -k ~/.config/solana/id3.json
+
+solana address -k ~/.config/solana/id4.json
+```
+
 * Do airdrop
 
 ```
@@ -123,13 +135,55 @@ solana airdrop 100 <PUBKEY_OF_ID2>
 solana airdrop 100 <PUBKEY_OF_ID3>
 ```
 
+* Check balance
+
+```
+solana balance <PUBKEY_OF_ID0>
+
+solana balance <PUBKEY_OF_ID1>
+
+solana balance <PUBKEY_OF_ID2>
+
+solana balance <PUBKEY_OF_ID3>
+```
 
 
-### 3.2 Transfer SOL to mining wallets (Solana mainnet-beta ONLY)
+
+### 3.2 Fund SOL to mining wallets (Solana mainnet-beta ONLY)
 
 **If you plan to run the sol-xen mining program on the Solana mainnet-beta network:**
 
-* Please transfer SOL to the mining wallets, such as <PUBKEY_OF_ID0>, <PUBKEY_OF_ID1>, <PUBKEY_OF_ID2>, <PUBKEY_OF_ID3>.
+* Config 
+
+```
+solana config set -u https://api.mainnet-beta.solana.com
+```
+
+* Check Public Address of mining wallets
+
+```
+solana address -k ~/.config/solana/id0.json # show <PUBKEY_OF_ID0>
+
+solana address -k ~/.config/solana/id2.json # show <PUBKEY_OF_ID1>
+
+solana address -k ~/.config/solana/id3.json # show <PUBKEY_OF_ID2>
+
+solana address -k ~/.config/solana/id4.json # show <PUBKEY_OF_ID3>
+```
+
+* Please fund SOL to the mining wallets, such as <PUBKEY_OF_ID0>, <PUBKEY_OF_ID1>, <PUBKEY_OF_ID2>, <PUBKEY_OF_ID3>.
+
+* Check balance
+
+```
+solana balance <PUBKEY_OF_ID0>
+
+solana balance <PUBKEY_OF_ID1>
+
+solana balance <PUBKEY_OF_ID2>
+
+solana balance <PUBKEY_OF_ID3>
+```
 
 
 
@@ -226,12 +280,23 @@ v22.2.0
 
 ## 5. Get solXEN Miner code 
 
+### 5.1 For XOLANA devnet (epsilon branch)
+
 ```
 git clone https://github.com/FairCrypto/sol-xen.git
 cd sol-xen
 git checkout epsilon
+git pull
 ```
 
+### 5.2 For Solana mainnet-beta (master branch)
+
+```
+git clone https://github.com/FairCrypto/sol-xen.git
+cd sol-xen
+git checkout master
+git pull
+```
 
 
 
@@ -267,7 +332,7 @@ DEBUG=*
 
 ```
 USER_WALLET_PATH=/home/ubuntu/.config/solana/
-ANCHOR_PROVIDER_URL=https://api.mainnet-beta.solana.com
+ANCHOR_PROVIDER_URL=https://api.mainnet-beta.solana.com # or any other mainnet-beta rpc
 PROGRAM_ID_MINTER=TODO
 DEBUG=*
 ```
