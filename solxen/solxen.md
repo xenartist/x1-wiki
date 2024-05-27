@@ -111,13 +111,13 @@ solana config set -u http://69.10.34.226:8899
 * Check Public Address of mining wallets
 
 ```
-solana address -k ~/.config/solana/id0.json
+solana address -k ~/.config/solana/id0.json # shown <PUBKEY_OF_ID0>
 
-solana address -k ~/.config/solana/id2.json
+solana address -k ~/.config/solana/id1.json # shown <PUBKEY_OF_ID1>
 
-solana address -k ~/.config/solana/id3.json
+solana address -k ~/.config/solana/id2.json # shown <PUBKEY_OF_ID2>
 
-solana address -k ~/.config/solana/id4.json
+solana address -k ~/.config/solana/id3.json # shown <PUBKEY_OF_ID3>
 ```
 
 * Do airdrop
@@ -162,13 +162,13 @@ solana config set -u https://api.mainnet-beta.solana.com
 * Check Public Address of mining wallets
 
 ```
-solana address -k ~/.config/solana/id0.json # show <PUBKEY_OF_ID0>
+solana address -k ~/.config/solana/id0.json # shown <PUBKEY_OF_ID0>
 
-solana address -k ~/.config/solana/id2.json # show <PUBKEY_OF_ID1>
+solana address -k ~/.config/solana/id1.json # shown <PUBKEY_OF_ID1>
 
-solana address -k ~/.config/solana/id3.json # show <PUBKEY_OF_ID2>
+solana address -k ~/.config/solana/id2.json # shown <PUBKEY_OF_ID2>
 
-solana address -k ~/.config/solana/id4.json # show <PUBKEY_OF_ID3>
+solana address -k ~/.config/solana/id3.json # shown <PUBKEY_OF_ID3>
 ```
 
 * Please fund SOL to the mining wallets, such as <PUBKEY_OF_ID0>, <PUBKEY_OF_ID1>, <PUBKEY_OF_ID2>, <PUBKEY_OF_ID3>.
