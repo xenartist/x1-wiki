@@ -326,7 +326,7 @@ PROGRAM_ID_MINTER=8HTvrqZT1JP279DMLT5SfNfGHxUeznem4Bh7zy92sWWx
 DEBUG=*
 ```
 
-### 6.2.2 For SOLANA mainnet-beta
+### 6.2.2 For Solana mainnet-beta
 
 * Config it as following:
 
