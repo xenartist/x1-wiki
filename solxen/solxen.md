@@ -305,12 +305,12 @@ git pull
 
 
 
-### 6.1 Copy example .env file
+### 6.1 Add a new .env file
 
-* Copy .env.example to .env
+* Edit .env
 
 ```
-cp .env.example .env
+.env
 ```
 
 
@@ -330,11 +330,11 @@ DEBUG=*
 
 * Config it as following:
 
+** make sure you have the right user wallet path (where you keypairs are) **
+
 ```
 USER_WALLET_PATH=/home/ubuntu/.config/solana/
 ANCHOR_PROVIDER_URL=https://api.mainnet-beta.solana.com # or any other mainnet-beta rpc
-PROGRAM_ID_MINTER=TODO
-DEBUG=*
 ```
 
 
