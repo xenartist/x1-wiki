@@ -157,7 +157,7 @@ Sol:
   Num: 1                                                        # 并发数(也即并发钱包数量，建议4)
   Fee: 3000                                                     # 优先级费用(单位为microLamports)
   ToAddr: "<ETH格式_地址>"          							  # 接收xn空投的eth格式地址(区分大小写；请替换为自己的钱包地址)
-  ProgramID: ""                                    # solxen合约地址
+  ProgramID: "7A5q3Cw4oN5w1UXfsRTJbxGDXmVhXL2PLhL1Hp7gGCmj"                                    # solxen合约地址
   Time: 1000                                                    # 间隔时间(单位毫秒)
   
 ```

@@ -152,7 +152,7 @@ Sol:
     Num: 1                                                   # Concurrency (number of concurrent wallets, recommend 4) 
     Fee: 3000                                                # Priority fee (in microLamports) 
     ToAddr: "<ETH_ADDRESS>"     # ETH-formatted address to receive xn airdrops (uppercase & lowercase; replace with your own wallet address) 
-    ProgramID: "Contract address on the mainnet network" # solxen contract address 
+    ProgramID: "7A5q3Cw4oN5w1UXfsRTJbxGDXmVhXL2PLhL1Hp7gGCmj" # solxen contract address 
     Time: 1000                                               # Interval time (in milliseconds) 
     
 ```
