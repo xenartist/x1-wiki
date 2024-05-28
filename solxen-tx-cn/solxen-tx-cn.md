@@ -1,4 +1,4 @@
-# solXEN挖矿中文简明教程 (Go) 2024.05.22
+# solXEN挖矿中文简明教程 (Go) 2024.05.28
 
 文档维护 by [xen_artist](https://twitter.com/xen_artist)
 

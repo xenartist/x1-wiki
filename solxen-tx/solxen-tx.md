@@ -1,5 +1,5 @@
 
-# solXEN Mining User Guide (Go) 2024.05.22
+# solXEN Mining User Guide (Go) 2024.05.28
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
