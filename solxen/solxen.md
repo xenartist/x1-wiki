@@ -333,7 +333,7 @@ DEBUG=*
 ```
 USER_WALLET_PATH=/home/ubuntu/.config/solana/
 ANCHOR_PROVIDER_URL=https://api.mainnet-beta.solana.com # or any other mainnet-beta rpc
-PROGRAM_ID_MINTER=FmwhDsuBtK3DqFXYnZRfho4Qd2Mty1t4khvNrpPveNao
+PROGRAM_ID_MINTER=TODO
 DEBUG=*
 ```
 
