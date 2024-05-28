@@ -305,14 +305,18 @@ git pull
 
 
 
-### 6.1 Add a new .env file
+### 6.1 Add/Edit the .env file
 
-* Edit .env
+* Add/Edit .env
 
 ```
-.env
+nano .env
 ```
+or 
 
+```
+vim .env
+```
 
 
 ### 6.2.1 For XOLANA devnet
