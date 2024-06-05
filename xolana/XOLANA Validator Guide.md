@@ -182,7 +182,7 @@ solana-keygen new --no-passphrase -o stake.json
 * Config 
 
 ```
-solana config set -u http://69.10.34.226:8899
+solana config set -u http://216.202.227.220:8899
 ```
 
 * Airdrop SOL
@@ -194,7 +194,7 @@ solana airdrop 100
 ## **6. Run Validator**
 
 ```
-nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint 69.10.34.226:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification   &
+nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint 216.202.227.220:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification   &
 ```
 
 Check normal logs
