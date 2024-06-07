@@ -1,4 +1,4 @@
-# solXEN Mining User Guide (Rust/Nodejs) 2024.05.28
+# solXEN Mining User Guide (Rust/Nodejs) 2024.06.07
 
 Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
