@@ -4,7 +4,82 @@ Document maintained by [xen_artist](https://twitter.com/xen_artist)
 
 
 
+# Install From Binaries
+
+
+
+Download the package for your OS. Extract and run.
+
+### https://github.com/FairCrypto/sol-xen/releases/latest
+
+
+
+## Windows
+```shell
+# Download
+https://github.com/FairCrypto/sol-xen/releases/latest/download/sol-xen-windows-x86_64.zip
+
+# Extract
+Unzip the sol-xen-windows-x86_64.zip file
+
+# Run the miner
+.\sol-xen-windows-x86_64\sol-xen-multiminer.exe --help
+```
+
+
+
+## MacOS
+
+```shell
+# Download
+wget https://github.com/faircrypto/sol-xen/releases/latest/download/sol-xen-macos-universal.tar.gz
+
+# Extract
+tar xf sol-xen-macos-universal.tar.gz
+
+# Run the miner
+./sol-xen-macos-universal/sol-xen-multiminer --help
+```
+
+
+
+## Linux (x86_64)
+
+```shell
+# Download
+wget https://github.com/faircrypto/sol-xen/releases/latest/download/sol-xen-linux-x86_64.tar.gz
+
+# Extract
+tar xf sol-xen-linux-x86_64.tar.gz
+
+# Run the miner
+./sol-xen-linux-x86_64/sol-xen-multiminer --help
+```
+
+
+
+## Linux (arm64)
+
+```shell
+# Download
+wget https://github.com/faircrypto/sol-xen/releases/latest/download/sol-xen-linux-arm64.tar.gz
+
+# Extract
+tar xf sol-xen-linux-arm64.tar.gz
+
+# Run the miner
+./sol-xen-linux-arm64/sol-xen-multiminer --help
+```
+
+
+
+# Install From Source
+
+
+
 ## 1. Download Solana Wallet
+
+
 
 ### Mac & Linux
 
