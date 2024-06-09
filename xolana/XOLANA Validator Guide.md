@@ -4,20 +4,20 @@
 
 
 * Open your favorite Terminal application
-* Install the Solana release [v1.18.12](https://github.com/solana-labs/solana/releases/tag/v1.18.12) on your machine by running:
+* Install the Solana release [v1.18.15](https://github.com/solana-labs/solana/releases/tag/v1.18.15) on your machine by running:
 
   ```
-  sh -c "$(curl -sSfL https://release.solana.com/v1.18.12/install)"
+  sh -c "$(curl -sSfL https://release.solana.com/v1.18.15/install)"
   ```
 
 * The following output indicates a successful update:
 
   ```
-  downloading v1.18.12 installer
+  downloading v1.18.15 installer
   Configuration: /home/solana/.config/solana/install/config.yml
   Active release directory: /home/solana/.local/share/solana/install/active_release
-  * Release version: v1.18.12
-  * Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.12/solana-release-x86_64-unknown-linux-gnu.tar.bz2
+  * Release version: v1.18.15
+  * Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.15/solana-release-x86_64-unknown-linux-gnu.tar.bz2
   Update successful
   ```
 
@@ -97,7 +97,9 @@ EOF"
 
 
 
-# Building
+# Building (Optional)
+
+### (If not trying to run solana-validator from the source code, then just skip the following building steps)
 
 ## **1. Install rustc, cargo and rustfmt.**
 
@@ -144,6 +146,10 @@ It should be shown like this:
 ```
 solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
 ```
+
+
+
+# Running
 
 ## **4. Create key-pairs**
 
@@ -193,8 +199,16 @@ solana airdrop 100
 
 ## **6. Run Validator**
 
+* **If running solana-validator from installed solana cli directly:**
+
 ```
-nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification   &
+nohup solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
+```
+
+* **If running solana-validator from the bianry built through xolana source code:**
+
+```
+nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
 ```
 
 Check normal logs
