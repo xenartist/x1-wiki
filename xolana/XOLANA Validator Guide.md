@@ -128,7 +128,7 @@ sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cma
 ```bash
 git clone https://github.com/jacklevin74/xolana.git
 cd xolana
-git checkout v1.18.12
+git checkout xolana
 ```
 
 ## **3. Build.**
