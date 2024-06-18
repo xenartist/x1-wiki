@@ -144,7 +144,7 @@ git checkout xolana
 ```
 It should be shown like this:
 ```
-solana-validator 1.18.12 (src:00000000; feat:4215500110, client:SolanaLabs)
+solana-validator 1.18.15 (src:00000000; feat:4215500110, client:SolanaLabs)
 ```
 
 
