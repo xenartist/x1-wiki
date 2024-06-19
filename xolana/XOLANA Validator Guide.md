@@ -134,7 +134,7 @@ git checkout xolana
 ## **3. Build.**
 
 ```bash
-./cargo build --release
+cargo build --release
 ```
 
 * Check version
