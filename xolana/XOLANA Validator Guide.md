@@ -202,13 +202,13 @@ solana airdrop 100
 * **If running solana-validator from installed solana cli directly:**
 
 ```
-nohup solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
+nohup solana-validator --identity identity.json --limit-ledger-size 50000000 --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
 ```
 
 * **If running solana-validator from the bianry built through xolana source code:**
 
 ```
-nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
+nohup ./target/release/solana-validator --identity identity.json --limit-ledger-size 50000000 --rpc-port 8899 --entrypoint xolana.xen.network:8001 --full-rpc-api --log - --vote-account vote.json --max-genesis-archive-unpacked-size 1073741824 --no-incremental-snapshots --require-tower --enable-rpc-transaction-history --enable-extended-tx-metadata-storage --skip-startup-ledger-verification &
 ```
 
 Check normal logs
