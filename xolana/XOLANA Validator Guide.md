@@ -287,7 +287,7 @@ solana stake-account stake.json
 
 Normal logs
 ```
-tail -f log.txt
+tail -f nohup.out
 ```
 
 Check leader schedule
@@ -296,7 +296,7 @@ solana leader-schedule | grep <IDENTITY_PUBKEY>
 ```
 or 
 ```
-tail -f log.txt | grep -i "My next leader slot"
+tail -f nohup.out | grep -i "My next leader slot"
 ```
 
 Check validator status
