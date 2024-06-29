@@ -260,15 +260,15 @@ solana create-stake-account stake.json 10
 ## **9. Create Vote Account**
 
 ```
-solana create-vote-account vote.json identity.json  <WITHDRAWER_PUBKEY> --commission 10
+solana create-vote-account vote.json identity.json <WITHDRAWER_PUBKEY> --commission 10
 ```
 
 ## **10. Stake**
 
-Transfer some SOL (eg. 50000) to public address of stake.
+Transfer some SOL (eg. 10) to public address of stake.
 
 ```
-solana transfer <STAKE_PUBKEY> 50000
+solana transfer <STAKE_PUBKEY> 10
 ```
 
 Do delegate stake operation.
