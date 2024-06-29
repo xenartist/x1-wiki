@@ -248,7 +248,7 @@ Check ledger status
 ## **7. Transfer 100 SOL to identity account**
 
 ```
-solana transfer <IDENTITY_PUBKEY> 100
+solana transfer <IDENTITY_PUBKEY> 100 --allow-unfunded-recipient
 ```
 
 ## **8. Create Stake Account**
