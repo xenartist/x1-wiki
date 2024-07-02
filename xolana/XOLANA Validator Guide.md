@@ -86,7 +86,8 @@ DefaultLimitNOFILE=1000000
 to the [Manager] section of /etc/systemd/system.conf.
 ```
 sudo systemctl daemon-reload
-
+```
+```
 sudo bash -c "cat >/etc/security/limits.d/90-solana-nofiles.conf <<EOF
 # Increase process file descriptor count limit
 * - nofile 1000000
