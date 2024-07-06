@@ -311,6 +311,18 @@ and
 solana validators
 ```
 
+Check block production
+
+```
+solana block-production
+```
+
+Check epoch information
+
+```
+solana epoch-info
+```
+
 ## **12. Kill Validator Process**
 
 Check validator process
