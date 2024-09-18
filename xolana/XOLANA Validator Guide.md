@@ -4,20 +4,20 @@
 
 
 * Open your favorite Terminal application
-* Install the Solana release [v1.18.15](https://github.com/solana-labs/solana/releases/tag/v1.18.15) on your machine by running:
+* Install the Solana release [v1.18.23](https://github.com/solana-labs/solana/releases/tag/v1.18.23) on your machine by running:
 
   ```
-  sh -c "$(curl -sSfL https://release.solana.com/v1.18.15/install)"
+  sh -c "$(curl -sSfL https://release.solana.com/v1.18.23/install)"
   ```
 
 * The following output indicates a successful update:
 
   ```
-  downloading v1.18.15 installer
+  downloading v1.18.23 installer
   Configuration: /home/solana/.config/solana/install/config.yml
   Active release directory: /home/solana/.local/share/solana/install/active_release
-  * Release version: v1.18.15
-  * Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.15/solana-release-x86_64-unknown-linux-gnu.tar.bz2
+  * Release version: v1.18.23
+  * Release URL: https://github.com/solana-labs/solana/releases/download/v1.18.23/solana-release-x86_64-unknown-linux-gnu.tar.bz2
   Update successful
   ```
 
@@ -145,7 +145,7 @@ cargo build --release
 ```
 It should be shown like this:
 ```
-solana-validator 1.18.15 (src:00000000; feat:4215500110, client:SolanaLabs)
+solana-cli 1.18.23 (src:aeb3a2e1; feat:4215500110, client:SolanaLabs)
 ```
 
 
@@ -184,19 +184,9 @@ solana-keygen new --no-passphrase -o  withdrawer.json
 solana-keygen new --no-passphrase -o stake.json
 ```
 
-## **5. Airdrop testing SOL**
+## **5. XOLANA FAUCET**
 
-* Config 
-
-```
-solana config set -u http://xolana.xen.network:8899
-```
-
-* Airdrop SOL
-
-```
-solana airdrop 100
-```
+* Please go to https://xolana.xen.network/web_faucet, and request xolana faucet (airdrop testing SOL).
 
 ## **6. Run Validator**
 
