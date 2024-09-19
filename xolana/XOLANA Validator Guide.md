@@ -102,7 +102,7 @@ EOF"
 
 ### (If not trying to run solana-validator from the source code, then just skip the following building steps)
 
-## **1. Install rustc, cargo and rustfmt.**
+## ***. Install rustc, cargo and rustfmt.**
 
 ```bash
 curl https://sh.rustup.rs -sSf | sh
@@ -124,7 +124,7 @@ sudo apt-get update
 sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang cmake make libprotobuf-dev protobuf-compiler
 ```
 
-## **2. Download the source code.**
+## ***. Download the source code.**
 
 ```bash
 git clone https://github.com/jacklevin74/xolana.git
@@ -132,7 +132,7 @@ cd xolana
 git checkout xolana
 ```
 
-## **3. Build.**
+## ***. Build.**
 
 ```bash
 cargo build --release
@@ -152,13 +152,13 @@ solana-cli 1.18.23 (src:aeb3a2e1; feat:4215500110, client:SolanaLabs)
 
 # Running
 
-## Config RPC
+## 1. Config RPC
 
 ```
 solana config set -u http://xolana.xen.network:8899
 ```
 
-## **4. Create key-pairs**
+## **2. Create key-pairs**
 
 * Create a new wallet
 
@@ -190,11 +190,11 @@ solana-keygen new --no-passphrase -o  withdrawer.json
 solana-keygen new --no-passphrase -o stake.json
 ```
 
-## **5. XOLANA FAUCET**
+## **3. XOLANA FAUCET**
 
 * Please go to https://xolana.xen.network/web_faucet, and request xolana faucet (airdrop testing SOL).
 
-## **6. Run Validator**
+## **4. Run Validator**
 
 * **If running solana-validator from installed solana cli directly:**
 
@@ -242,30 +242,30 @@ Check ledger status
 ./target/release/solana-validator --ledger ./ledger monitor
 ```
 
-## **7. Transfer 100 SOL to identity account**
+## **5. Transfer 1 SOL to identity account**
 
 ```
-solana transfer <IDENTITY_PUBKEY> 100 --allow-unfunded-recipient
+solana transfer <IDENTITY_PUBKEY> 1 --allow-unfunded-recipient
 ```
 
-## **8. Create Stake Account**
+## **6. Create Stake Account**
 
 ```
-solana create-stake-account stake.json 10
+solana create-stake-account stake.json 1
 ```
 
-## **9. Create Vote Account**
+## **7. Create Vote Account**
 
 ```
 solana create-vote-account vote.json identity.json <WITHDRAWER_PUBKEY> --commission 10
 ```
 
-## **10. Stake**
+## **8. Stake**
 
-Transfer some SOL (eg. 1000) to public address of stake.
+Transfer some SOL (eg. 1) to public address of stake.
 
 ```
-solana transfer <STAKE_PUBKEY> 1000
+solana transfer <STAKE_PUBKEY> 1
 ```
 
 Do delegate stake operation.
@@ -280,7 +280,7 @@ Do stake operation.
 solana stake-account stake.json
 ```
 
-## **11. Check status**
+## **9. Check status**
 
 Normal logs
 ```
@@ -319,7 +319,7 @@ Check epoch information
 solana epoch-info
 ```
 
-## **12. Kill Validator Process**
+## **10. Kill Validator Process**
 
 Check validator process
 
