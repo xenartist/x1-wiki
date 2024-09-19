@@ -152,6 +152,12 @@ solana-cli 1.18.23 (src:aeb3a2e1; feat:4215500110, client:SolanaLabs)
 
 # Running
 
+## Config RPC
+
+```
+solana config set -u http://xolana.xen.network:8899
+```
+
 ## **4. Create key-pairs**
 
 * Create a new wallet
