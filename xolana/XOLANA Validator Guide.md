@@ -321,19 +321,14 @@ solana epoch-info
 
 ## **10. Kill Validator Process**
 
-Check validator process
+Validator exits safely
 
 ```
-ps aux | grep solana-validator
+solana-validator exit
 ```
 
-Kill validator process
 
-```
-pkill -f solana-validator
-```
-
-Check validator process again, make sure it has been killed properly
+Check validator process again, make sure it exits properly
 
 ```
 ps aux | grep solana-validator
