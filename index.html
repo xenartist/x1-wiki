@@ -125,6 +125,14 @@
             color: var(--text-color);
         }
 
+        .project-description {
+            margin-top: 300px;
+            word-wrap: break-word;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            line-height: 1.4;
+        }
+
         .burned-amount {
             font-weight: bold;
             color: var(--success-color);
@@ -221,6 +229,7 @@
                         <th class="rank">Rank</th>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Description</th>
                         <th>Website</th>
                         <th>Burned (MEMO)</th>
                     </tr>
@@ -336,6 +345,14 @@
                 description,
                 website
             };
+        }
+
+        // Truncate description to specified length
+        function truncateDescription(description, maxLength = 128) {
+            if (!description || description.length <= maxLength) {
+                return description || '';
+            }
+            return description.substring(0, maxLength) + '...';
         }
 
         // Format large numbers with commas
@@ -476,6 +493,7 @@
                     </td>
                     <td class="project-id">${project.projectId}</td>
                     <td class="project-name">${project.name || `Project ${project.projectId}`}</td>
+                    <td class="project-description">${truncateDescription(project.description)}</td>
                     <td>
                         ${project.website ? 
                             `<a href="${project.website}" target="_blank" rel="noopener noreferrer" class="website-link">${project.website}</a>` : 
