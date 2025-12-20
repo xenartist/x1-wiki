@@ -8,16 +8,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --primary-color: #0061c8;
-            --secondary-color: #6c757d;
-            --success-color: #28a745;
-            --warning-color: #ffc107;
-            --danger-color: #dc3545;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --border-color: #dee2e6;
+            /* Dark Mode Color Palette - Consistent with MEMO Page */
+            --bg-primary: #0b0f19;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1e293b;
+            --bg-card: #151c2c;
+            --bg-hover: rgba(59, 130, 246, 0.1);
+            --bg-input: #1e293b;
+            
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            
+            --accent-primary: #3b82f6;
+            --accent-blue: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-danger: #ef4444;
+            --accent-info: #06b6d4;
+            
+            --border-primary: #1e293b;
+            --border-secondary: #334155;
+            --border-light: #374151;
+            --border-color: #1e293b;
+            
+            --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.4);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.5);
+            --shadow-heavy: 0 20px 25px rgba(0, 0, 0, 0.6);
+            
+            --tooltip-bg: rgba(17, 24, 39, 0.95);
+            
+            --alert-error-bg: rgba(239, 68, 68, 0.15);
+            --alert-error-border: rgba(239, 68, 68, 0.3);
+            --alert-error-text: #fca5a5;
+            
+            --alert-warning-bg: rgba(245, 158, 11, 0.15);
+            --alert-warning-border: rgba(245, 158, 11, 0.3);
+            --alert-warning-text: #fbbf24;
         }
 
         * {
@@ -28,156 +56,445 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-tertiary) 100%);
+            color: var(--text-primary);
             line-height: 1.6;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
+        /* Project Page Styles - Consistent with Reference Design */
+        .project-page {
+            min-height: 100vh;
+            padding: 2rem;
+            color: var(--text-primary);
+        }
+
+        .leaderboard-view {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
-            border-bottom: 2px solid var(--border-color);
+        /* Header Section */
+        .project-header {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-primary);
         }
 
-        .header h1 {
-            margin: 0;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .header-text h1 {
+            color: var(--text-primary);
             font-size: 2.5rem;
-            color: var(--primary-color);
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
+
+        .project-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin: 0;
+            font-weight: 500;
         }
 
-        .loading {
+        .header-actions {
+            flex-shrink: 0;
+        }
+
+        /* Loading, Error, Empty States */
+        .loading-state,
+        .error-state,
+        .empty-state {
+            padding: 4rem 2rem;
             text-align: center;
-            padding: 40px;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
+            color: var(--text-secondary);
         }
 
-        .error {
-            background: #f8d7da;
-            border: 1px solid #f5c6cb;
-            color: #721c24;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
+        .loading-state {
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 18px;
+            font-weight: 500;
         }
 
-        .table-container {
-            background: white;
+        .loading-state:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-state {
+            color: var(--alert-error-text);
+            background: var(--alert-error-bg);
+            border: 1px solid var(--alert-error-border);
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
+            margin: 2rem;
         }
 
-        table {
+        .error-state:before {
+            content: "⚠️";
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Main Content Container */
+        .project-content {
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-medium);
+            border: 1px solid var(--border-primary);
+        }
+
+        /* Table Container */
+        .project-table-container {
+            overflow-x: auto;
+        }
+
+        /* Table Styles */
+        .project-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 14px;
         }
 
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background: var(--primary-color);
-            color: white;
+        .project-table th {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
             font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-primary);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
-        tbody tr:hover {
-            background: rgba(0, 123, 255, 0.05);
+        .project-table th:first-child {
+            border-top-left-radius: 0;
         }
 
-        .rank {
-            font-weight: bold;
-            width: 80px;
+        .project-table th:last-child {
+            border-top-right-radius: 0;
         }
 
-        .rank-medal {
-            font-size: 1.2rem;
+        .project-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: middle;
         }
 
-        .project-id {
-            font-family: 'Courier New', monospace;
+        .project-row {
+            transition: all 0.3s ease;
+            background: var(--bg-card);
+        }
+
+        .project-row:hover {
+            background: var(--bg-hover);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-light);
+        }
+
+        /* Cell-specific styles */
+        .rank-cell {
+            width: 60px;
+        }
+
+        .rank-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            min-width: 50px;
+            background: transparent;
+            border: 1px solid transparent;
+        }
+
+        .rank-icon i {
+            font-size: 16px;
+        }
+
+        .rank-number {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .rank-1st {
+            color: #f59e0b;
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .rank-1st i {
+            color: #f59e0b;
+        }
+
+        .rank-2nd {
+            color: #9ca3af;
+            background: rgba(156, 163, 175, 0.1);
+            border-color: rgba(156, 163, 175, 0.3);
+        }
+
+        .rank-2nd i {
+            color: #9ca3af;
+        }
+
+        .rank-3rd {
+            color: #cd7c2f;
+            background: rgba(205, 124, 47, 0.1);
+            border-color: rgba(205, 124, 47, 0.3);
+        }
+
+        .rank-3rd i {
+            color: #cd7c2f;
+        }
+
+        .rank-top10 {
+            color: #dc2626;
+            background: rgba(220, 38, 38, 0.1);
+            border-color: rgba(220, 38, 38, 0.3);
+        }
+
+        .rank-top10 i {
+            color: #dc2626;
+        }
+
+        .rank-others {
+            color: #6b7280;
+            background: rgba(107, 114, 128, 0.1);
+            border-color: rgba(107, 114, 128, 0.3);
+        }
+
+        .rank-others i {
+            color: #6b7280;
+        }
+
+        /* Hover effects */
+        .rank-icon:hover {
+            transform: scale(1.05);
+            transition: all 0.2s ease;
+        }
+
+        .rank-1st:hover {
+            background: rgba(245, 158, 11, 0.2);
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+        }
+
+        .rank-2nd:hover {
+            background: rgba(156, 163, 175, 0.2);
+            box-shadow: 0 2px 8px rgba(156, 163, 175, 0.3);
+        }
+
+        .rank-3rd:hover {
+            background: rgba(205, 124, 47, 0.2);
+            box-shadow: 0 2px 8px rgba(205, 124, 47, 0.3);
+        }
+
+        .rank-top10:hover {
+            background: rgba(220, 38, 38, 0.2);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+        }
+
+        .rank-others:hover {
+            background: rgba(107, 114, 128, 0.2);
+            box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
+        }
+
+        .id-cell {
+            width: 60px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+            color: #6b7280;
             font-weight: 500;
+        }
+
+        .logo-cell {
+            width: 50px;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .name-cell {
+            min-width: 200px;
+        }
+
+        .project-name-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .project-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px; /* Slightly rounded for pixel art */
+            object-fit: cover;
+            border: 1px solid var(--border-primary);
+            background: var(--bg-secondary);
+            image-rendering: pixelated; /* Keep pixel art crisp */
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        .project-logo-placeholder {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 14px;
         }
 
         .project-name {
             font-weight: 600;
-            color: var(--text-color);
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+
+        .description-cell {
+            min-width: 350px;
+            max-width: 500px;
         }
 
         .project-description {
-            margin-top: 300px;
-            word-wrap: break-word;
-            font-size: 0.9rem;
-            color: var(--secondary-color);
+            color: var(--text-secondary);
             line-height: 1.4;
         }
 
-        .burned-amount {
-            font-weight: bold;
-            color: var(--success-color);
+        .website-cell {
+            min-width: 200px;
+            max-width: 250px;
         }
 
         .website-link {
-            color: var(--primary-color);
+            color: var(--accent-blue);
             text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+            font-size: 13px;
+            padding: 4px 8px;
+            background: rgba(59, 130, 246, 0.15);
+            border-radius: 6px;
+            transition: all 0.2s ease;
         }
 
         .website-link:hover {
-            text-decoration: underline;
+            background: rgba(59, 130, 246, 0.25);
+            text-decoration: none;
         }
 
+        .no-website {
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        .burned-cell {
+            width: 110px;
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        .burned-amount {
+            font-weight: 500;
+            color: #6b7280;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .burned-amount i {
+            color: #6b7280;
+            font-size: 13px;
+            opacity: 1;
+            margin-right: 6px;
+        }
+
+        .burned-fire-icon {
+            margin-right: 8px;
+        }
+
+        /* Refresh Button */
         .refresh-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
+            background: var(--bg-card);
+            color: var(--accent-primary);
+            border: 2px solid var(--accent-primary);
+            border-radius: 12px;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            font-size: 1rem;
-            margin: 20px 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            margin: 0 0 2rem 0;
         }
 
-        .refresh-btn:hover {
-            background: #0056b3;
+        .refresh-btn:hover:not(:disabled) {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
         }
 
         .refresh-btn:disabled {
-            background: var(--secondary-color);
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            border-color: var(--border-secondary);
             cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
         }
 
         .footer {
             text-align: center;
             margin-top: 40px;
             padding: 20px 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--secondary-color);
+            border-top: 1px solid var(--border-primary);
+            color: var(--text-secondary);
             font-size: 0.9rem;
         }
 
         .footer a {
-            color: var(--primary-color);
+            color: var(--accent-primary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -186,68 +503,112 @@
             text-decoration: underline;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .project-page {
+                padding: 1rem;
             }
-
-            .header h1 {
+            
+            .project-header {
+                padding: 1.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+            
+            .header-text h1 {
                 font-size: 2rem;
+                text-align: center;
             }
-
-            table {
-                font-size: 0.9rem;
+            
+            .project-table {
+                font-size: 12px;
             }
+            
+            .project-table th,
+            .project-table td {
+                padding: 12px 10px;
+            }
+            
+            /* Hide less important columns on mobile */
+            .website-cell {
+                display: none;
+            }
+        }
 
-            th, td {
-                padding: 10px 8px;
+        @media (max-width: 480px) {
+            .project-table th,
+            .project-table td {
+                padding: 8px 6px;
+            }
+            
+            .id-cell {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>X1.Wiki</h1>
-            <p>Top 100 Projects on X1 Blockchain</p>
+    <div class="project-page">
+        <div class="leaderboard-view">
+            <!-- Header Section -->
+            <div class="project-header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>
+                            <i class="fas fa-trophy"></i>
+                            X1.Wiki
+                        </h1>
+                        <p class="project-subtitle">Top 100 Projects on X1 Blockchain</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="refresh-btn" id="refreshBtn" onclick="loadLeaderboard()">
+                <i class="fas fa-sync-alt"></i>
+                Refresh Data
+            </button>
+            
+            <!-- Main Content -->
+            <div class="project-content">
+                <div id="loadingMessage" class="loading-state">
+                    Loading projects from X1 mainnet...
+                </div>
+
+                <div id="errorMessage" class="error-state" style="display: none;"></div>
+
+                <div id="leaderboardTable" class="project-table-container" style="display: none;">
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>ID</th>
+                                <th>Logo</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Website</th>
+                                <th>Burned</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-
-        <button class="refresh-btn" id="refreshBtn" onclick="loadLeaderboard()">
-            <i class="fas fa-sync-alt"></i> Refresh Data
-        </button>
-
-        <div id="loadingMessage" class="loading">
-            Loading leaderboard data from X1 blockchain...
-        </div>
-
-        <div id="errorMessage" class="error" style="display: none;"></div>
-
-        <div class="table-container" id="leaderboardTable" style="display: none;">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="rank">Rank</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Website</th>
-                        <th>Burned (MEMO)</th>
-                    </tr>
-                </thead>
-                <tbody id="leaderboardBody">
-                </tbody>
-            </table>
-        </div>
-
+        
         <div class="footer">
-            <p><strong>Create your own project on <a href="https://beta.memo.rip">https://beta.memo.rip</a></strong></p>
+            <p><strong>Create your own project on <a href="https://memo.rip">https://memo.rip</a></strong></p>
             <p><a href="https://x1.wiki">x1.wiki</a> is maintained by <a href="https://x.com/xen_artist">@xen_artist</a></p>
         </div>
     </div>
 
     <script>
-        const RPC_URL = 'https://rpc.testnet.x1.xyz';
-        const MEMO_PROJECT_PROGRAM_ID = 'ENVapgjzzMjbRhLJ279yNsSgaQtDYYVgWq98j54yYnyx';
+        const RPC_URL = 'https://rpc.mainnet.x1.xyz';
+        const MEMO_PROJECT_PROGRAM_ID = '6Vavot6ybhWBG3rjNXnLfNRPVTz7Garf6E4EZk3byp3a';
 
         let connection;
 
@@ -261,25 +622,24 @@
             return solanaWeb3.PublicKey.findProgramAddressSync(seeds, new solanaWeb3.PublicKey(programId));
         }
 
-        // Parse leaderboard data
+        // Parse leaderboard data according to Rust BurnLeaderboard structure
         function parseLeaderboardData(data) {
-            if (data.length < 13) {
+            if (data.length < 12) { // 8 bytes discriminator + 4 bytes vec length minimum
                 throw new Error('Data too short for leaderboard structure');
             }
 
             let offset = 8; // Skip discriminator
 
-            // Read current_size (u8)
-            const currentSize = data[offset];
-            offset += 1;
-
-            // Read Vec length (u32)
+            // Read Vec<LeaderboardEntry> length (u32)
             const vecLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
             offset += 4;
 
-            // Verify data consistency
-            if (currentSize !== vecLength) {
-                throw new Error(`Inconsistent data: current_size (${currentSize}) != vec_length (${vecLength})`);
+            console.log(`Leaderboard contains ${vecLength} entries`);
+
+            // Verify we have enough data for all entries
+            const expectedDataLength = offset + (vecLength * 16); // Each entry is 16 bytes (u64 + u64)
+            if (data.length < expectedDataLength) {
+                throw new Error(`Data too short: expected ${expectedDataLength} bytes, got ${data.length} bytes`);
             }
 
             // Read entries
@@ -287,7 +647,9 @@
             for (let i = 0; i < vecLength; i++) {
                 const entryOffset = offset + (i * 16);
                 
+                // Read project_id (u64)
                 const projectId = new DataView(data.buffer, entryOffset, 8).getBigUint64(0, true);
+                // Read burned_amount (u64) 
                 const burnedAmount = new DataView(data.buffer, entryOffset + 8, 8).getBigUint64(0, true);
 
                 entries.push({
@@ -296,27 +658,36 @@
                 });
             }
 
+            console.log(`Parsed ${entries.length} leaderboard entries`);
+
             return {
-                currentSize,
                 entries
             };
         }
 
-        // Parse project data
+        // Parse project data according to Rust contract structure
         function parseProjectData(data) {
             if (data.length < 8) {
                 throw new Error('Data too short');
             }
 
             let offset = 8; // Skip discriminator
-            offset += 8; // Skip project_id
 
-            // Read creator (32 bytes)
+            // Read project_id (u64 - 8 bytes)
+            const projectId = new DataView(data.buffer, offset, 8).getBigUint64(0, true);
+            offset += 8;
+
+            // Read creator (Pubkey - 32 bytes)
             const creator = new solanaWeb3.PublicKey(data.slice(offset, offset + 32));
             offset += 32;
 
-            // Skip timestamps
-            offset += 16; // created_at + last_updated
+            // Read created_at (i64 - 8 bytes)
+            const createdAt = new DataView(data.buffer, offset, 8).getBigInt64(0, true);
+            offset += 8;
+
+            // Read last_updated (i64 - 8 bytes)
+            const lastUpdated = new DataView(data.buffer, offset, 8).getBigInt64(0, true);
+            offset += 8;
 
             // Read name string
             const nameLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
@@ -330,51 +701,369 @@
             const description = new TextDecoder().decode(data.slice(offset, offset + descLength));
             offset += descLength;
 
-            // Skip image string
+            // Read image string (but skip content for now)
             const imageLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
             offset += 4;
+            const image = new TextDecoder().decode(data.slice(offset, offset + imageLength));
             offset += imageLength;
 
             // Read website string
             const websiteLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
             offset += 4;
             const website = new TextDecoder().decode(data.slice(offset, offset + websiteLength));
+            offset += websiteLength;
+
+            // Read tags vector
+            const tagsVecLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
+            offset += 4;
+            const tags = [];
+            for (let i = 0; i < tagsVecLength; i++) {
+                const tagLength = new DataView(data.buffer, offset, 4).getUint32(0, true);
+                offset += 4;
+                const tag = new TextDecoder().decode(data.slice(offset, offset + tagLength));
+                offset += tagLength;
+                tags.push(tag);
+            }
+
+            // Read memo_count (u64 - 8 bytes)
+            const memoCount = new DataView(data.buffer, offset, 8).getBigUint64(0, true);
+            offset += 8;
+
+            // Read burned_amount (u64 - 8 bytes)
+            const burnedAmount = new DataView(data.buffer, offset, 8).getBigUint64(0, true);
+            offset += 8;
+
+            // Read last_memo_time (i64 - 8 bytes)  
+            const lastMemoTime = new DataView(data.buffer, offset, 8).getBigInt64(0, true);
+            offset += 8;
+
+            // Read bump (u8 - 1 byte)
+            const bump = new DataView(data.buffer, offset, 1).getUint8(0);
 
             return {
-                name,
+                projectId: Number(projectId),
                 creator,
+                createdAt: Number(createdAt),
+                lastUpdated: Number(lastUpdated),
+                name,
                 description,
-                website
+                image,
+                website,
+                tags,
+                memoCount: Number(memoCount),
+                burnedAmount, // Keep as BigInt for precision
+                lastMemoTime: Number(lastMemoTime),
+                bump
             };
         }
 
-        // Truncate description to specified length
-        function truncateDescription(description, maxLength = 128) {
-            if (!description || description.length <= maxLength) {
-                return description || '';
+        // Get rank display based on reference design
+        function getRankDisplay(rank) {
+            let rankClass = '';
+            let icon = '';
+            
+            if (rank === 1) {
+                rankClass = 'rank-1st';
+                icon = '<i class="fas fa-trophy"></i>';
+            } else if (rank === 2) {
+                rankClass = 'rank-2nd';
+                icon = '<i class="fas fa-medal"></i>';
+            } else if (rank === 3) {
+                rankClass = 'rank-3rd';
+                icon = '<i class="fas fa-medal"></i>';
+            } else if (rank >= 4 && rank <= 10) {
+                rankClass = 'rank-top10';
+                icon = '<i class="fas fa-fire"></i>';
+            } else {
+                rankClass = 'rank-others';
+                icon = '<i class="fas fa-fire"></i>';
             }
-            return description.substring(0, maxLength) + '...';
+            
+            return {
+                class: rankClass,
+                html: `<span class="rank-icon ${rankClass}">${icon}<span class="rank-number">${rank}</span></span>`
+            };
         }
 
-        // Format large numbers with commas
-        function formatNumber(num) {
-            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        // Format number with commas (from reference)
+        function formatNumberWithCommas(num) {
+            const numStr = num.toString();
+            let result = '';
+            const chars = numStr.split('');
+            
+            for (let i = 0; i < chars.length; i++) {
+                if (i > 0 && (chars.length - i) % 3 === 0) {
+                    result += ',';
+                }
+                result += chars[i];
+            }
+            
+            return result;
         }
 
-        // Get rank medal emoji
-        function getRankMedal(rank) {
-            switch (rank) {
-                case 1: return '<i class="fas fa-trophy" style="color: #FFD700;"></i>';
-                case 2: return '<i class="fas fa-medal" style="color: #C0C0C0;"></i>';
-                case 3: return '<i class="fas fa-medal" style="color: #CD7F32;"></i>';
-                default: return '<i class="fas fa-fire" style="color: #FF6B35;"></i>';
+        // Pixel Art Decoder - matches Rust implementation
+        const PixelArt = {
+            // Map safe character back to 6-bit value (from Rust map_from_safe_char)
+            mapFromSafeChar(c) {
+                const ascii = c.charCodeAt(0);
+                
+                // Check special characters
+                if (c === ':' || c === '\\' || c === '"') {
+                    return null;
+                }
+                
+                // Check range
+                if (ascii < 35 || ascii > 126) {
+                    return null;
+                }
+                
+                let value = ascii - 35;
+                if (ascii > 92) value -= 1;  // adjust for '\'
+                if (ascii > 58) value -= 1;  // adjust for ':'
+                
+                if (value >= 64) {
+                    return null;
+                }
+                
+                return value;
+            },
+
+            // Decode from safe string with specified dimensions
+            fromSafeStringWithSize(s, width, height) {
+                const expectedPixels = width * height;
+                const expectedChars = Math.ceil(expectedPixels / 6); // Round up division
+                
+                // Validate string length
+                if (s.length < expectedChars || s.length > expectedChars + 1) {
+                    console.log(`String length ${s.length} doesn't match expected ${expectedChars} for ${width}x${height}`);
+                    return null;
+                }
+                
+                const data = new Array(width * height).fill(false);
+                let bitPos = 0;
+                
+                for (const c of s) {
+                    const value = this.mapFromSafeChar(c);
+                    if (value === null) {
+                        console.log(`Failed to map char: '${c}'`);
+                        return null;
+                    }
+                    
+                    for (let i = 5; i >= 0; i--) {
+                        if (bitPos >= expectedPixels) {
+                            break;
+                        }
+                        
+                        const bit = (value & (1 << i)) !== 0;
+                        data[bitPos] = bit;
+                        bitPos++;
+                    }
+                    
+                    if (bitPos >= expectedPixels) {
+                        break;
+                    }
+                }
+                
+                return {
+                    width,
+                    height,
+                    data
+                };
+            },
+
+            // Decode from optimal string format (matches Rust from_optimal_string)
+            fromOptimalString(s) {
+                if (s.length < 2) {
+                    return null;
+                }
+
+                const parts = s.split(':');
+                
+                if (parts.length === 3) {
+                    // New format: type:widthxheight:data
+                    const formatType = parts[0];
+                    const sizeStr = parts[1];
+                    const data = parts[2];
+                    
+                    // Parse size: "32x32" -> [32, 32]
+                    const sizeParts = sizeStr.split('x');
+                    if (sizeParts.length !== 2) {
+                        return null;
+                    }
+                    
+                    const width = parseInt(sizeParts[0]);
+                    const height = parseInt(sizeParts[1]);
+                    
+                    if (isNaN(width) || isNaN(height)) {
+                        return null;
+                    }
+                    
+                    // Process data based on format type
+                    switch (formatType) {
+                        case 'c':
+                            // TODO: Implement decompression if needed
+                            console.log('Compressed format not yet supported');
+                            return null;
+                        case 'n':
+                            return this.fromSafeStringWithSize(data, width, height);
+                        default:
+                            return null;
+                    }
+                } else if (parts.length === 2) {
+                    // Old format for backward compatibility: type:data
+                    const [prefix, data] = parts;
+                    
+                    switch (prefix) {
+                        case 'c':
+                            console.log('Compressed format not yet supported');
+                            return null;
+                        case 'n':
+                            // Try to detect size from data length
+                            return this.fromSafeStringAutoSize(data);
+                        default:
+                            return null;
+                    }
+                }
+                
+                return null;
+            },
+
+            // Auto-detect size from string length (matches Rust logic)
+            fromSafeStringAutoSize(s) {
+                const totalBits = s.length * 6;
+                console.log(`Input string length: ${s.length}, total_bits: ${totalBits}`);
+                
+                let size;
+                switch (true) {
+                    case (totalBits >= 60 && totalBits <= 72):   // 8x8
+                        size = [8, 8];
+                        break;
+                    case (totalBits >= 252 && totalBits <= 264): // 16x16
+                        size = [16, 16];
+                        break;
+                    case (totalBits >= 1020 && totalBits <= 1032): // 32x32
+                        size = [32, 32];
+                        break;
+                    case (totalBits >= 4092 && totalBits <= 4104): // 64x64
+                        size = [64, 64];
+                        break;
+                    default:
+                        console.log(`Unexpected total bits: ${totalBits}`);
+                        return null;
+                }
+                
+                console.log(`Detected size: ${size[0]}x${size[1]}`);
+                return this.fromSafeStringWithSize(s, size[0], size[1]);
+            },
+
+            // Render pixel art to canvas
+            renderToCanvas(pixelData, size = 32) {
+                if (!pixelData) return null;
+                
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                // Set background to white
+                ctx.fillStyle = '#ffffff'; // White background
+                ctx.fillRect(0, 0, size, size);
+                
+                const pixelSize = size / pixelData.width;
+                
+                // Draw pixels in black
+                ctx.fillStyle = '#000000'; // Black pixels
+                for (let y = 0; y < pixelData.height; y++) {
+                    for (let x = 0; x < pixelData.width; x++) {
+                        const pixel = pixelData.data[y * pixelData.width + x];
+                        if (pixel) {
+                            ctx.fillRect(
+                                Math.floor(x * pixelSize), 
+                                Math.floor(y * pixelSize), 
+                                Math.ceil(pixelSize), 
+                                Math.ceil(pixelSize)
+                            );
+                        }
+                    }
+                }
+                
+                return canvas.toDataURL();
+            }
+        };
+
+        // Render project logo (handles both pixel art and regular images)
+        function renderProjectLogo(project) {
+            const imageData = project.image && project.image.trim();
+            const altText = project.name || `Project ${project.projectId}`;
+            
+            if (!imageData) {
+                return '<div class="project-logo-placeholder"><i class="fas fa-cube"></i></div>';
+            }
+            
+            // Check if it's pixel art data (starts with format prefix)
+            if (imageData.startsWith('n:') || imageData.startsWith('c:')) {
+                try {
+                    const pixelData = PixelArt.fromOptimalString(imageData);
+                    if (pixelData) {
+                        const dataUrl = PixelArt.renderToCanvas(pixelData, 32);
+                        if (dataUrl) {
+                            return `<img src="${dataUrl}" alt="${altText}" class="project-logo">` +
+                                   '<div class="project-logo-placeholder" style="display:none;"><i class="fas fa-cube"></i></div>';
+                        }
+                    }
+                } catch (error) {
+                    console.log(`Failed to render pixel art for project ${project.projectId}:`, error);
+                }
+                
+                // Fallback for pixel art decode errors
+                return '<div class="project-logo-placeholder"><i class="fas fa-image"></i></div>';
+            }
+            
+            // Handle regular image URLs
+            if (imageData.startsWith('http://') || imageData.startsWith('https://') || imageData.startsWith('data:')) {
+                return `<img src="${imageData}" alt="${altText}" class="project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">` +
+                       '<div class="project-logo-placeholder" style="display:none;"><i class="fas fa-cube"></i></div>';
+            }
+            
+            // Fallback for unknown format
+            return '<div class="project-logo-placeholder"><i class="fas fa-question"></i></div>';
+        }
+
+        // Truncate description (from reference)
+        function truncateDescription(description) {
+            if (!description || description === '') {
+                return '-';
+            }
+            
+            const bytes = new TextEncoder().encode(description);
+            if (bytes.length <= 128) {
+                return description;
+            } else {
+                // Find the last complete UTF-8 character boundary within 128 bytes
+                let end = 128;
+                const decoder = new TextDecoder('utf-8', { fatal: false });
+                
+                while (end > 0) {
+                    try {
+                        const truncated = decoder.decode(bytes.slice(0, end));
+                        if (!truncated.endsWith('\uFFFD')) {
+                            return truncated + '...';
+                        }
+                    } catch (e) {
+                        // Continue to find valid boundary
+                    }
+                    end--;
+                }
+                
+                return '...';
             }
         }
 
         // Show error message
         function showError(message) {
-            document.getElementById('errorMessage').textContent = message;
-            document.getElementById('errorMessage').style.display = 'block';
+            const errorEl = document.getElementById('errorMessage');
+            errorEl.innerHTML = `<p>Error: ${message}</p>`;
+            errorEl.style.display = 'block';
             document.getElementById('loadingMessage').style.display = 'none';
             document.getElementById('leaderboardTable').style.display = 'none';
         }
@@ -436,17 +1125,28 @@
                             if (projectAccount) {
                                 const projectData = parseProjectData(projectAccount.data);
                                 return {
-                                    ...entry,
+                                    projectId: projectData.projectId,
+                                    burnedAmount: projectData.burnedAmount, // Use burned amount from project data
                                     name: projectData.name,
                                     website: projectData.website,
-                                    description: projectData.description
+                                    description: projectData.description,
+                                    creator: projectData.creator,
+                                    createdAt: projectData.createdAt,
+                                    lastUpdated: projectData.lastUpdated,
+                                    image: projectData.image,
+                                    tags: projectData.tags,
+                                    memoCount: projectData.memoCount,
+                                    lastMemoTime: projectData.lastMemoTime
                                 };
                             } else {
                                 return {
                                     ...entry,
                                     name: `Project ${entry.projectId}`,
                                     website: '',
-                                    description: ''
+                                    description: '',
+                                    tags: [],
+                                    memoCount: 0,
+                                    lastMemoTime: 0
                                 };
                             }
                         } catch (error) {
@@ -464,6 +1164,19 @@
                 // Render table
                 renderLeaderboard(projectDetails);
 
+                // Show empty state if no projects
+                if (projectDetails.length === 0) {
+                    const tbody = document.getElementById('leaderboardBody');
+                    tbody.innerHTML = `
+                        <tr>
+                            <td colspan="7" style="text-align: center; padding: 4rem 2rem; color: var(--text-secondary);">
+                                <i class="fas fa-scroll" style="font-size: 48px; margin-bottom: 16px; color: var(--text-muted);"></i>
+                                <p style="font-size: 16px; font-weight: 600; margin: 0 0 8px 0;">No projects found in burn leaderboard.</p>
+                            </td>
+                        </tr>
+                    `;
+                }
+                
                 // Hide loading and show table
                 document.getElementById('loadingMessage').style.display = 'none';
                 document.getElementById('leaderboardTable').style.display = 'block';
@@ -476,7 +1189,7 @@
             }
         }
 
-        // Render leaderboard table
+        // Render leaderboard table (updated to match reference design)
         function renderLeaderboard(projects) {
             const tbody = document.getElementById('leaderboardBody');
             tbody.innerHTML = '';
@@ -484,34 +1197,60 @@
             projects.forEach((project, index) => {
                 const rank = index + 1;
                 const row = document.createElement('tr');
+                row.className = 'project-row';
                 
-                const burnedMemo = Math.floor(Number(project.burnedAmount) / 1_000_000);
+                const burnedTokens = Number(project.burnedAmount) / 1_000_000;
+                const websiteDisplay = project.website && project.website.length > 0 ? project.website : '';
+                const descriptionDisplay = truncateDescription(project.description);
+                const rankDisplay = getRankDisplay(rank);
                 
                 row.innerHTML = `
-                    <td class="rank">
-                        <span class="rank-medal">${getRankMedal(rank)}</span>
-                        ${rank}
+                    <td class="rank-cell">
+                        ${rankDisplay.html}
                     </td>
-                    <td class="project-id">${project.projectId}</td>
-                    <td class="project-name">${project.name || `Project ${project.projectId}`}</td>
-                    <td class="project-description">${truncateDescription(project.description)}</td>
-                    <td>
-                        ${project.website ? 
-                            `<a href="${project.website}" target="_blank" rel="noopener noreferrer" class="website-link">${project.website}</a>` : 
-                            '-'
+                    <td class="id-cell">${project.projectId}</td>
+                    <td class="logo-cell">
+                        ${renderProjectLogo(project)}
+                    </td>
+                    <td class="name-cell">
+                        <span class="project-name">${project.name || 'Project ' + project.projectId}</span>
+                    </td>
+                    <td class="description-cell">
+                        <span class="project-description">${descriptionDisplay}</span>
+                    </td>
+                    <td class="website-cell">
+                        ${websiteDisplay ? 
+                            `<a href="${websiteDisplay}" target="_blank" rel="noopener noreferrer" class="website-link">${websiteDisplay}</a>` : 
+                            '<span class="no-website">-</span>'
                         }
                     </td>
-                    <td class="burned-amount">${formatNumber(burnedMemo)}</td>
+                    <td class="burned-cell">
+                        <span class="burned-amount">
+                            <i class="fas fa-fire burned-fire-icon"></i>
+                            <span class="burned-number">${formatNumberWithCommas(Math.floor(burnedTokens))}</span>
+                        </span>
+                    </td>
                 `;
                 
                 tbody.appendChild(row);
             });
         }
 
+        // Debug function to test pixel art decoding
+        function testPixelArt() {
+            console.log('PixelArt decoder ready');
+            console.log('Usage: PixelArt.fromOptimalString("n:32x32:data...")');
+            return PixelArt;
+        }
+
         // Initialize on page load
         window.addEventListener('DOMContentLoaded', () => {
             initConnection();
             loadLeaderboard();
+            
+            // Make PixelArt available globally for debugging
+            window.PixelArt = PixelArt;
+            window.testPixelArt = testPixelArt;
         });
     </script>
 </body>
