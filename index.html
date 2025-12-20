@@ -588,8 +588,8 @@
                                 <th>ID</th>
                                 <th>Logo</th>
                                 <th>Name</th>
-                                <th>Description</th>
                                 <th>Website</th>
+                                <th>Description</th>
                                 <th>Burned</th>
                             </tr>
                         </thead>
@@ -1215,14 +1215,14 @@
                     <td class="name-cell">
                         <span class="project-name">${project.name || 'Project ' + project.projectId}</span>
                     </td>
-                    <td class="description-cell">
-                        <span class="project-description">${descriptionDisplay}</span>
-                    </td>
                     <td class="website-cell">
                         ${websiteDisplay ? 
                             `<a href="${websiteDisplay}" target="_blank" rel="noopener noreferrer" class="website-link">${websiteDisplay}</a>` : 
                             '<span class="no-website">-</span>'
                         }
+                    </td>
+                    <td class="description-cell">
+                        <span class="project-description">${descriptionDisplay}</span>
                     </td>
                     <td class="burned-cell">
                         <span class="burned-amount">
