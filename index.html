@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>X1.Wiki - Top 100 Projects on X1 Blockchain</title>
     <script src="https://unpkg.com/@solana/web3.js@1.87.0/lib/index.iife.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -539,6 +540,347 @@
             }
         }
 
+        /* ==========================
+           Featured Activity Carousel Styles
+           ========================== */
+
+        .featured-carousel {
+            margin-bottom: 2rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--border-primary);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .featured-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-header i {
+            color: var(--accent-warning);
+            font-size: 1.5rem;
+        }
+
+        .featured-header h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            perspective: 1200px;
+        }
+
+        .featured-card {
+            position: absolute;
+            width: 100%;
+            max-width: 800px;
+            left: 50%;
+            top: 50%;
+            transform-origin: center center;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+        }
+
+        .featured-card-front {
+            transform: translate(-50%, -50%) scale(1) translateZ(0);
+            z-index: 3;
+            opacity: 1;
+        }
+
+        .featured-card-back {
+            transform: translate(-50%, -50%) scale(0.9) translateZ(-100px) translateX(-30%);
+            z-index: 1;
+            opacity: 0.4;
+            filter: blur(2px);
+            cursor: pointer;
+        }
+
+        .featured-card-back:hover {
+            opacity: 0.6;
+            filter: blur(1px);
+            transform: translate(-50%, -50%) scale(0.92) translateZ(-80px) translateX(-28%);
+        }
+
+        .featured-card-next {
+            transform: translate(-50%, -50%) scale(0.9) translateZ(-100px) translateX(30%);
+            z-index: 1;
+            opacity: 0.4;
+            filter: blur(2px);
+            cursor: pointer;
+        }
+
+        .featured-card-next:hover {
+            opacity: 0.6;
+            filter: blur(1px);
+            transform: translate(-50%, -50%) scale(0.92) translateZ(-80px) translateX(28%);
+        }
+
+        .featured-card-content {
+            padding: 2rem;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Different background gradients for each operation type */
+        .featured-create {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
+        }
+
+        .featured-update {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.08) 100%);
+        }
+
+        .featured-burn {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.08) 0%, rgba(239, 68, 68, 0.08) 100%);
+        }
+
+        .featured-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .create-badge {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.75) 0%, rgba(6, 182, 212, 0.75) 100%);
+            color: white;
+        }
+
+        .update-badge {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.75) 0%, rgba(236, 72, 153, 0.75) 100%);
+            color: white;
+        }
+
+        .burn-badge {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.75) 0%, rgba(239, 68, 68, 0.75) 100%);
+            color: white;
+        }
+
+        .featured-project-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .featured-project-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .featured-logo,
+        .featured-logo-placeholder {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            overflow: hidden;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+
+        .featured-logo-placeholder {
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-primary);
+        }
+
+        .featured-logo-placeholder i {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .featured-project-meta {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .featured-project-name {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            word-break: break-word;
+        }
+
+        .featured-project-id {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .featured-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured-website {
+            color: var(--accent-cyan);
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .featured-website:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        .featured-stats {
+            display: flex;
+            gap: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-primary);
+            flex-wrap: wrap;
+        }
+
+        .featured-stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .featured-stat i {
+            color: var(--accent-warning);
+            font-size: 1rem;
+        }
+
+        .featured-stat .stat-value {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .featured-stat .stat-label {
+            color: var(--text-muted);
+        }
+
+        .featured-message {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            padding: 1rem;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-warning);
+        }
+
+        /* Devlog specific styles */
+        .devlog-layout-horizontal {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .devlog-content-wrapper {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .devlog-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            object-fit: cover;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            border: 1px solid var(--border-primary);
+        }
+
+        .devlog-content {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            white-space: pre-line;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Carousel indicators */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .indicator:hover {
+            background: var(--accent-cyan);
+            opacity: 0.6;
+            transform: scale(1.2);
+        }
+
+        .indicator.active {
+            width: 24px;
+            border-radius: 4px;
+            background: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+            cursor: default;
+        }
+
+        .indicator.active:hover {
+            opacity: 1;
+            transform: scale(1);
+        }
+
         @media (max-width: 480px) {
             .project-table th,
             .project-table td {
@@ -547,6 +889,63 @@
             
             .id-cell {
                 display: none;
+            }
+
+            /* Featured carousel mobile styles */
+            .featured-carousel {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            .featured-header h2 {
+                font-size: 1.2rem;
+            }
+            
+            .carousel-track {
+                height: 350px;
+            }
+            
+            .featured-card {
+                max-width: 100%;
+            }
+            
+            .featured-card-back,
+            .featured-card-next {
+                transform: translate(-50%, -50%) scale(0.85) translateZ(-50px) translateX(0);
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .featured-card-content {
+                padding: 1.5rem;
+                min-height: 320px;
+            }
+            
+            .featured-project-name {
+                font-size: 1.1rem;
+            }
+            
+            .featured-stats {
+                gap: 1rem;
+            }
+            
+            .featured-stat {
+                font-size: 0.85rem;
+            }
+
+            /* Mobile devlog layout - stack vertically on small screens */
+            .devlog-layout-horizontal {
+                flex-direction: column;
+            }
+            
+            .devlog-image {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .devlog-content {
+                font-size: 0.85rem;
+                -webkit-line-clamp: 4;
             }
         }
     </style>
@@ -563,6 +962,22 @@
                             X1.Wiki
                         </h1>
                         <p class="project-subtitle">Top 100 Projects on X1 Blockchain</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Activity Carousel -->
+            <div class="featured-carousel">
+                <div class="featured-header">
+                    <i class="fas fa-star"></i>
+                    <h2>Featured Activity</h2>
+                </div>
+                <div class="carousel-container">
+                    <div id="carouselTrack" class="carousel-track">
+                        <!-- Featured cards will be dynamically inserted here -->
+                    </div>
+                    <div id="carouselIndicators" class="carousel-indicators">
+                        <!-- Indicators will be dynamically inserted here -->
                     </div>
                 </div>
             </div>
@@ -757,6 +1172,550 @@
             };
         }
 
+        // ============================================
+        // Featured Activity Functions
+        // ============================================
+
+        let currentCarouselIndex = 0;
+        let featuredActivities = [];
+        let carouselInterval = null;
+
+        // Parse Borsh-serialized BurnMemo and operation data
+        function parseFeaturedActivityMemo(memoData) {
+            try {
+                // Decode Base64
+                const borshBytes = Uint8Array.from(atob(memoData), c => c.charCodeAt(0));
+                
+                let offset = 0;
+                
+                // Read BurnMemo version (u8)
+                const version = borshBytes[offset];
+                offset += 1;
+                
+                // Read burn_amount (u64)
+                const burnAmountView = new DataView(borshBytes.buffer, borshBytes.byteOffset + offset, 8);
+                const burnAmount = burnAmountView.getBigUint64(0, true);
+                offset += 8;
+                
+                // Read payload length (u32)
+                const payloadLenView = new DataView(borshBytes.buffer, borshBytes.byteOffset + offset, 4);
+                const payloadLen = payloadLenView.getUint32(0, true);
+                offset += 4;
+                
+                // Read payload
+                const payload = borshBytes.slice(offset, offset + payloadLen);
+                
+                // Parse payload for project operation
+                return parseProjectOperationPayload(payload, burnAmount);
+            } catch (e) {
+                console.error('Error parsing featured activity memo:', e);
+                return null;
+            }
+        }
+
+        function parseProjectOperationPayload(payload, burnAmount) {
+            try {
+                let offset = 0;
+                
+                // Read version (u8)
+                const version = payload[offset];
+                offset += 1;
+                
+                // Read category string (u32 len + bytes)
+                const categoryLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                const categoryLen = categoryLenView.getUint32(0, true);
+                offset += 4;
+                const category = new TextDecoder().decode(payload.slice(offset, offset + categoryLen));
+                offset += categoryLen;
+                
+                // Read operation string (u32 len + bytes)
+                const operationLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                const operationLen = operationLenView.getUint32(0, true);
+                offset += 4;
+                const operation = new TextDecoder().decode(payload.slice(offset, offset + operationLen));
+                offset += operationLen;
+                
+                if (category !== 'project') {
+                    return null;
+                }
+                
+                // Read project_id (u64)
+                const projectIdView = new DataView(payload.buffer, payload.byteOffset + offset, 8);
+                const projectId = projectIdView.getBigUint64(0, true);
+                offset += 8;
+                
+                let details = { projectId: Number(projectId) };
+                
+                if (operation === 'create_project') {
+                    // Read name
+                    const nameLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const nameLen = nameLenView.getUint32(0, true);
+                    offset += 4;
+                    details.name = new TextDecoder().decode(payload.slice(offset, offset + nameLen));
+                    offset += nameLen;
+                    
+                    // Read description
+                    const descLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const descLen = descLenView.getUint32(0, true);
+                    offset += 4;
+                    details.description = new TextDecoder().decode(payload.slice(offset, offset + descLen));
+                    offset += descLen;
+                    
+                    // Read image
+                    const imageLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const imageLen = imageLenView.getUint32(0, true);
+                    offset += 4;
+                    details.image = new TextDecoder().decode(payload.slice(offset, offset + imageLen));
+                    offset += imageLen;
+                    
+                    // Read website
+                    const websiteLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const websiteLen = websiteLenView.getUint32(0, true);
+                    offset += 4;
+                    details.website = new TextDecoder().decode(payload.slice(offset, offset + websiteLen));
+                    offset += websiteLen;
+                    
+                    return {
+                        type: 'CreateProject',
+                        burnAmount,
+                        details
+                    };
+                } else if (operation === 'update_project') {
+                    return {
+                        type: 'UpdateProject',
+                        burnAmount,
+                        details
+                    };
+                } else if (operation === 'burn_for_project') {
+                    // Read burner string
+                    const burnerLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const burnerLen = burnerLenView.getUint32(0, true);
+                    offset += 4;
+                    details.burner = new TextDecoder().decode(payload.slice(offset, offset + burnerLen));
+                    offset += burnerLen;
+                    
+                    // Read message
+                    const messageLenView = new DataView(payload.buffer, payload.byteOffset + offset, 4);
+                    const messageLen = messageLenView.getUint32(0, true);
+                    offset += 4;
+                    details.message = new TextDecoder().decode(payload.slice(offset, offset + messageLen));
+                    offset += messageLen;
+                    
+                    console.log('Raw message content:', details.message);
+                    console.log('Message length:', details.message.length, 'Expected:', messageLen);
+                    
+                    // Try to parse message as JSON for devlog format
+                    let isDevlog = false;
+                    try {
+                        // Trim whitespace and check if it looks like JSON
+                        let trimmedMessage = details.message.trim();
+                        
+                        // Handle control characters in JSON strings (like newlines in content)
+                        // Replace actual newlines with \n escape sequences
+                        trimmedMessage = trimmedMessage.replace(/\r?\n/g, '\\n').replace(/\t/g, '\\t');
+                        
+                        if (trimmedMessage.startsWith('{') && trimmedMessage.endsWith('}')) {
+                            const messageJson = JSON.parse(trimmedMessage);
+                            console.log('Parsed message JSON:', messageJson);
+                            
+                            if (messageJson.type === 'devlog' && messageJson.title) {
+                                // This is a devlog
+                                // Restore newlines in content for display
+                                const content = (messageJson.content || '').replace(/\\n/g, '\n');
+                                
+                                details.devlog = {
+                                    title: messageJson.title,
+                                    content: content,
+                                    image: messageJson.image || ''
+                                };
+                                isDevlog = true;
+                                console.log('Detected devlog:', details.devlog);
+                            }
+                        } else {
+                            console.log('Message is not JSON format (does not start with { and end with })');
+                        }
+                    } catch (e) {
+                        // Not JSON or not devlog format, treat as regular message
+                        console.error('Failed to parse message as JSON:', e);
+                        console.log('Message preview:', details.message.substring(0, 200));
+                    }
+                    
+                    return {
+                        type: isDevlog ? 'DevlogActivity' : 'BurnForProject',
+                        burnAmount,
+                        details
+                    };
+                }
+                
+                return null;
+            } catch (e) {
+                console.error('Error parsing project operation payload:', e);
+                return null;
+            }
+        }
+
+        // Load featured activity (recent 3 transactions)
+        async function loadFeaturedActivity() {
+            try {
+                const programId = new solanaWeb3.PublicKey(MEMO_PROJECT_PROGRAM_ID);
+                
+                // Get recent signatures for the program
+                const signatures = await connection.getSignaturesForAddress(programId, {
+                    limit: 3
+                });
+                
+                console.log('Found', signatures.length, 'recent signatures');
+                
+                featuredActivities = [];
+                
+                for (const sigInfo of signatures) {
+                    try {
+                        const signature = sigInfo.signature;
+                        const blockTime = sigInfo.blockTime;
+                        const slot = sigInfo.slot;
+                        const memo = sigInfo.memo;
+                        
+                        if (!memo) continue;
+                        
+                        // Parse memo (format: "[length] base64_data")
+                        const memoData = memo.includes(' ') ? memo.split(' ')[1] : memo;
+                        
+                        // Parse the memo to get operation details
+                        const parsed = parseFeaturedActivityMemo(memoData);
+                        
+                        if (!parsed) continue;
+                        
+                        // Get project info
+                        const projectId = parsed.details.projectId;
+                        let projectInfo = null;
+                        
+                        try {
+                            const projectIdBytes = new ArrayBuffer(8);
+                            const view = new DataView(projectIdBytes);
+                            view.setBigUint64(0, BigInt(projectId), true);
+                            
+                            const [projectPDA] = calculatePDA(
+                                [new TextEncoder().encode('project'), new Uint8Array(projectIdBytes)],
+                                MEMO_PROJECT_PROGRAM_ID
+                            );
+                            
+                            const projectAccount = await connection.getAccountInfo(projectPDA);
+                            if (projectAccount) {
+                                projectInfo = parseProjectData(projectAccount.data);
+                            }
+                        } catch (e) {
+                            console.warn('Failed to get project info for ID', projectId, e);
+                        }
+                        
+                        featuredActivities.push({
+                            signature,
+                            blockTime,
+                            slot,
+                            type: parsed.type,
+                            burnAmount: parsed.burnAmount,
+                            details: parsed.details,
+                            projectInfo
+                        });
+                    } catch (e) {
+                        console.error('Error processing signature:', e);
+                    }
+                }
+                
+                console.log('Parsed featured activities:', featuredActivities);
+                
+                if (featuredActivities.length > 0) {
+                    renderFeaturedCarousel();
+                    startCarousel();
+                }
+            } catch (error) {
+                console.error('Error loading featured activity:', error);
+            }
+        }
+
+        // Render featured carousel
+        function renderFeaturedCarousel() {
+            const carouselTrack = document.getElementById('carouselTrack');
+            const carouselIndicators = document.getElementById('carouselIndicators');
+            
+            if (!carouselTrack || !carouselIndicators) return;
+            
+            // Clear existing content
+            carouselTrack.innerHTML = '';
+            carouselIndicators.innerHTML = '';
+            
+            // Render each activity card
+            featuredActivities.forEach((activity, index) => {
+                const card = createFeaturedCard(activity, index);
+                carouselTrack.appendChild(card);
+                
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.className = 'indicator' + (index === 0 ? ' active' : '');
+                indicator.addEventListener('click', () => goToSlide(index));
+                carouselIndicators.appendChild(indicator);
+            });
+            
+            updateCarouselPositions();
+        }
+
+        // Create a featured card
+        function createFeaturedCard(activity, index) {
+            const card = document.createElement('div');
+            card.className = 'featured-card';
+            card.dataset.index = index;
+            
+            const isDevlog = activity.type === 'DevlogActivity';
+            
+            const typeClass = activity.type === 'CreateProject' ? 'featured-create' :
+                            activity.type === 'UpdateProject' ? 'featured-update' : 'featured-burn';
+            
+            const badgeClass = activity.type === 'CreateProject' ? 'create-badge' :
+                             activity.type === 'UpdateProject' ? 'update-badge' : 'burn-badge';
+            
+            const badgeText = activity.type === 'CreateProject' ? 'Create Project' :
+                            activity.type === 'UpdateProject' ? 'Update Project' : 'Devlog Activity';
+            
+            const badgeIcon = activity.type === 'CreateProject' ? 'fa-plus-circle' :
+                            activity.type === 'UpdateProject' ? 'fa-edit' : 'fa-fire';
+            
+            let logoHtml = '';
+            if (activity.projectInfo && activity.projectInfo.image) {
+                const image = activity.projectInfo.image;
+                if (image.startsWith('n:') || image.startsWith('c:')) {
+                    try {
+                        const pixelData = PixelArt.fromOptimalString(image);
+                        if (pixelData) {
+                            const dataUrl = PixelArt.renderToCanvas(pixelData, 48);
+                            if (dataUrl) {
+                                logoHtml = `<img src="${dataUrl}" alt="Logo" class="featured-logo">`;
+                            }
+                        } else {
+                            console.warn('Pixel art parsing failed for project logo');
+                        }
+                    } catch (e) {
+                        console.error('Error rendering pixel art:', e);
+                    }
+                }
+                if (!logoHtml && image) {
+                    logoHtml = `<img src="${image}" alt="Logo" class="featured-logo" onerror="this.style.display='none';">`;
+                }
+            }
+            if (!logoHtml) {
+                logoHtml = `<div class="featured-logo-placeholder"><i class="fas fa-cube"></i></div>`;
+            }
+            
+            const projectName = activity.projectInfo ? (activity.projectInfo.name || `Project ${activity.details.projectId}`) : `Project ${activity.details.projectId}`;
+            const projectDescription = activity.projectInfo ? activity.projectInfo.description : '';
+            const projectWebsite = activity.projectInfo ? activity.projectInfo.website : '';
+            
+            const burnedTokens = (Number(activity.burnAmount) / 1_000_000).toFixed(0);
+            const timeAgo = getTimeAgo(activity.blockTime);
+            
+            let contentHtml = '';
+            
+            if (activity.type === 'CreateProject') {
+                contentHtml = `
+                    <div class="featured-project-info">
+                        <div class="featured-project-header">
+                            ${logoHtml}
+                            <div class="featured-project-meta">
+                                <h3 class="featured-project-name">${projectName}</h3>
+                                <p class="featured-project-id">Project #${activity.details.projectId}</p>
+                            </div>
+                        </div>
+                        ${projectDescription ? `<p class="featured-description">${projectDescription}</p>` : ''}
+                        ${projectWebsite ? `<a href="${projectWebsite}" target="_blank" class="featured-website" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i> ${projectWebsite}
+                        </a>` : ''}
+                    </div>
+                `;
+            } else if (activity.type === 'UpdateProject') {
+                contentHtml = `
+                    <div class="featured-project-info">
+                        <div class="featured-project-header">
+                            ${logoHtml}
+                            <div class="featured-project-meta">
+                                <h3 class="featured-project-name">${projectName}</h3>
+                                <p class="featured-project-id">Project #${activity.details.projectId}</p>
+                            </div>
+                        </div>
+                        ${projectDescription ? `<p class="featured-description">${projectDescription}</p>` : ''}
+                    </div>
+                `;
+            } else if (activity.type === 'DevlogActivity') {
+                // Handle Devlog format with image
+                const devlog = activity.details.devlog;
+                
+                // Safety check - ensure devlog exists
+                if (!devlog) {
+                    console.error('DevlogActivity type but no devlog data found');
+                    contentHtml = `
+                        <div class="featured-project-info">
+                            <div class="featured-project-header">
+                                ${logoHtml}
+                                <div class="featured-project-meta">
+                                    <h3 class="featured-project-name">${projectName}</h3>
+                                    <p class="featured-project-id">Project #${activity.details.projectId}</p>
+                                </div>
+                            </div>
+                            <p class="featured-message">Devlog data unavailable</p>
+                        </div>
+                    `;
+                } else {
+                    let devlogImageHtml = '';
+                    
+                    if (devlog.image) {
+                        const devlogImage = devlog.image;
+                        console.log('Processing devlog image:', devlogImage.substring(0, 50) + '...');
+                        
+                        if (devlogImage.startsWith('n:') || devlogImage.startsWith('c:')) {
+                            try {
+                                const pixelData = PixelArt.fromOptimalString(devlogImage);
+                                if (pixelData) {
+                                    const dataUrl = PixelArt.renderToCanvas(pixelData, 100);
+                                    if (dataUrl) {
+                                        devlogImageHtml = `<img src="${dataUrl}" alt="${escapeHtml(devlog.title)}" class="devlog-image">`;
+                                        console.log('Successfully rendered devlog pixel art');
+                                    }
+                                } else {
+                                    console.warn('Pixel art parsing failed for devlog');
+                                }
+                            } catch (e) {
+                                console.error('Error rendering devlog pixel art:', e);
+                            }
+                        } else if (devlogImage) {
+                            devlogImageHtml = `<img src="${devlogImage}" alt="${escapeHtml(devlog.title)}" class="devlog-image" onerror="this.style.display='none';">`;
+                        }
+                    }
+                    
+                    contentHtml = `
+                        <div class="featured-project-info">
+                            <div class="featured-project-header">
+                                ${logoHtml}
+                                <div class="featured-project-meta">
+                                    <h3 class="featured-project-name">${escapeHtml(devlog.title)}</h3>
+                                    <p class="featured-project-id">For project: ${projectName}</p>
+                                </div>
+                            </div>
+                            <div class="devlog-layout-horizontal">
+                                ${devlogImageHtml ? devlogImageHtml : ''}
+                                <div class="devlog-content-wrapper">
+                                    ${devlog.content ? `<p class="devlog-content">${escapeHtml(devlog.content)}</p>` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            } else if (activity.type === 'BurnForProject') {
+                contentHtml = `
+                    <div class="featured-project-info">
+                        <div class="featured-project-header">
+                            ${logoHtml}
+                            <div class="featured-project-meta">
+                                <h3 class="featured-project-name">${projectName}</h3>
+                                <p class="featured-project-id">Project #${activity.details.projectId}</p>
+                            </div>
+                        </div>
+                        ${activity.details.message ? `<p class="featured-message">${activity.details.message}</p>` : ''}
+                    </div>
+                `;
+            }
+            
+            card.innerHTML = `
+                <div class="featured-card-content ${typeClass}">
+                    <span class="featured-badge ${badgeClass}">
+                        <i class="fas ${badgeIcon}"></i> ${badgeText}
+                    </span>
+                    ${contentHtml}
+                    <div class="featured-stats">
+                        <div class="featured-stat">
+                            <i class="fas fa-fire"></i>
+                            <span class="stat-value">${formatNumberWithCommas(burnedTokens)}</span>
+                            <span class="stat-label">MEMO Burned</span>
+                        </div>
+                        <div class="featured-stat">
+                            <i class="fas fa-clock"></i>
+                            <span class="stat-value">${timeAgo}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add click handler for side cards
+            card.addEventListener('click', () => {
+                if (index !== currentCarouselIndex) {
+                    goToSlide(index);
+                }
+            });
+            
+            return card;
+        }
+
+        // Update carousel positions
+        function updateCarouselPositions() {
+            const cards = document.querySelectorAll('.featured-card');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            cards.forEach((card, index) => {
+                card.className = 'featured-card';
+                
+                if (index === currentCarouselIndex) {
+                    card.classList.add('featured-card-front');
+                } else if (index === (currentCarouselIndex + featuredActivities.length - 1) % featuredActivities.length) {
+                    card.classList.add('featured-card-back');
+                } else if (index === (currentCarouselIndex + 1) % featuredActivities.length) {
+                    card.classList.add('featured-card-next');
+                } else {
+                    card.style.opacity = '0';
+                    card.style.pointerEvents = 'none';
+                }
+            });
+            
+            indicators.forEach((indicator, index) => {
+                if (index === currentCarouselIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            currentCarouselIndex = index;
+            updateCarouselPositions();
+            resetCarousel();
+        }
+
+        // Start auto carousel
+        function startCarousel() {
+            if (featuredActivities.length <= 1) return;
+            
+            carouselInterval = setInterval(() => {
+                currentCarouselIndex = (currentCarouselIndex + 1) % featuredActivities.length;
+                updateCarouselPositions();
+            }, 5000); // Change every 5 seconds
+        }
+
+        // Reset carousel timer
+        function resetCarousel() {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                startCarousel();
+            }
+        }
+
+        // Get time ago string
+        function getTimeAgo(timestamp) {
+            const now = Math.floor(Date.now() / 1000);
+            const diff = now - timestamp;
+            
+            if (diff < 60) return 'Just now';
+            if (diff < 3600) return `${Math.floor(diff / 60)}m ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)}h ago`;
+            return `${Math.floor(diff / 86400)}d ago`;
+        }
+
         // Get rank display based on reference design
         function getRankDisplay(rank) {
             let rankClass = '';
@@ -783,6 +1742,13 @@
                 class: rankClass,
                 html: `<span class="rank-icon ${rankClass}">${icon}<span class="rank-number">${rank}</span></span>`
             };
+        }
+
+        // Escape HTML to prevent XSS and display issues
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         // Format number with commas (from reference)
@@ -871,6 +1837,44 @@
                 };
             },
 
+            // Decompress Base64-encoded compressed pixel data using Deflate
+            fromCompressedString(compressedData, width, height) {
+                try {
+                    // Decode Base64 to binary
+                    const binaryString = atob(compressedData);
+                    const bytes = new Uint8Array(binaryString.length);
+                    for (let i = 0; i < binaryString.length; i++) {
+                        bytes[i] = binaryString.charCodeAt(i);
+                    }
+                    
+                    console.log('Compressed data length:', bytes.length);
+                    
+                    // Decompress using pako (Deflate decompression)
+                    let decompressed;
+                    try {
+                        decompressed = pako.inflateRaw(bytes);
+                        console.log('Decompressed data length:', decompressed.length);
+                    } catch (e) {
+                        console.error('Deflate decompression failed:', e);
+                        return null;
+                    }
+                    
+                    // Convert decompressed bytes to string (keeping original ASCII values)
+                    const decompressedStr = Array.from(decompressed)
+                        .map(b => String.fromCharCode(b))
+                        .join('');
+                    
+                    console.log('Decompressed string length:', decompressedStr.length);
+                    console.log('Decompressed string preview:', decompressedStr.substring(0, 50));
+                    
+                    // Now decode the decompressed string using normal safe string decoding
+                    return this.fromSafeStringWithSize(decompressedStr, width, height);
+                } catch (e) {
+                    console.error('Error decompressing pixel art:', e);
+                    return null;
+                }
+            },
+
             // Decode from optimal string format (matches Rust from_optimal_string)
             fromOptimalString(s) {
                 if (s.length < 2) {
@@ -901,9 +1905,8 @@
                     // Process data based on format type
                     switch (formatType) {
                         case 'c':
-                            // TODO: Implement decompression if needed
-                            console.log('Compressed format not yet supported');
-                            return null;
+                            // Compressed format: decompress the data
+                            return this.fromCompressedString(data, width, height);
                         case 'n':
                             return this.fromSafeStringWithSize(data, width, height);
                         default:
@@ -915,7 +1918,8 @@
                     
                     switch (prefix) {
                         case 'c':
-                            console.log('Compressed format not yet supported');
+                            // Compressed format without size - not supported in old format
+                            console.log('Compressed format requires size specification (use c:32x32:data format)');
                             return null;
                         case 'n':
                             // Try to detect size from data length
@@ -1079,6 +2083,9 @@
             document.getElementById('leaderboardTable').style.display = 'none';
 
             try {
+                // Load featured activity in parallel
+                loadFeaturedActivity();
+
                 // Calculate burn leaderboard PDA
                 const [burnLeaderboardPDA] = calculatePDA(
                     [new TextEncoder().encode('burn_leaderboard')], 
