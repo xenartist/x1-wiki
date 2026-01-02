@@ -93,6 +93,40 @@
             gap: 2rem;
         }
 
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-link {
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border: 1px solid var(--border-secondary);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-blue);
+            background: var(--bg-hover);
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .nav-link:active {
+            transform: translateY(0);
+        }
+
         .header-text h1 {
             color: var(--text-primary);
             font-size: 2.5rem;
@@ -518,6 +552,16 @@
                 flex-direction: column;
                 align-items: stretch;
                 gap: 1rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
             }
             
             .header-text h1 {
@@ -962,6 +1006,20 @@
                             X1.Wiki
                         </h1>
                         <p class="project-subtitle">Top 100 Projects on X1 Blockchain</p>
+                    </div>
+                    <div class="nav-links">
+                        <a href="https://validator.x1.wiki/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                            <i class="fas fa-server"></i> Validator
+                        </a>
+                        <a href="https://memo.rip/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                            <i class="fas fa-sticky-note"></i> MEMO
+                        </a>
+                        <a href="https://xoon.dev/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                            <i class="fas fa-rocket"></i> XOON
+                        </a>
+                        <a href="https://thesecond.best/" target="_blank" rel="noopener noreferrer" class="nav-link">
+                            <i class="fas fa-medal"></i> The Second Best
+                        </a>
                     </div>
                 </div>
             </div>
